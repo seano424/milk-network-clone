@@ -10,11 +10,7 @@ import { modalAtom } from '../atoms'
 import MobileMenu from './MobileMenu'
 import AnimatedLink from './AnimatedLink'
 import pages from '@/utilities/pages'
-
-const navbarVariants = {
-  open: { translateY: 0, transition: { duration: 0.5 } },
-  closed: { translateY: -80, transition: { duration: 0.7 } },
-}
+import { navbarVariants } from '@/utilities/headerVariants'
 
 export default function Header() {
   const [isTop, setIsTop] = useState(true)

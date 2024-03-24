@@ -8,27 +8,11 @@ import { motion } from 'framer-motion'
 import AnimatedLink from './AnimatedLink'
 import pages from '@/utilities/pages'
 import offices from '@/utilities/offices'
-
-const mobileMenuVariants = {
-  open: {
-    maxHeight: '100%',
-    transition: { duration: 0.8, staggerChildren: 0.1 },
-  },
-  closed: {
-    maxHeight: 0,
-    transition: { duration: 0.3 },
-  },
-}
-
-const mobileMenuContentVariants = {
-  open: { opacity: 1 },
-  closed: { opacity: 0 },
-}
-
-const mobileMenuLeftToRightVariants = {
-  open: { width: '100%', transition: { duration: 0.7, delay: 0.1 } },
-  closed: { width: 0, transition: { duration: 0.7 } },
-}
+import {
+  mobileMenuContentVariants,
+  mobileMenuLeftToRightVariants,
+  mobileMenuVariants,
+} from '@/utilities/headerVariants'
 
 export default function MobileMenu() {
   const [isModalOpen, setModal] = useAtom(modalAtom)
