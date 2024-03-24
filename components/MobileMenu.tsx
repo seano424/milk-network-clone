@@ -5,14 +5,9 @@ import { useAtom } from 'jotai'
 import { useEffect } from 'react'
 import { modalAtom } from '../atoms'
 import { motion } from 'framer-motion'
-
-const pages = [
-  { title: 'Work', href: '/' },
-  { title: 'Expertise', href: '/' },
-  { title: 'Community', href: '/' },
-  { title: 'Discover', href: '/' },
-  { title: 'Contact', href: '/' },
-]
+import AnimatedLink from './AnimatedLink'
+import pages from '@/utilities/pages'
+import offices from '@/utilities/offices'
 
 const mobileMenuVariants = {
   open: {
@@ -52,7 +47,7 @@ export default function MobileMenu() {
       initial="closed"
       animate={isModalOpen ? 'open' : 'closed'}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      className="fixed bg-white inset-0 z-50 flex flex-col overflow-hidden"
+      className="fixed lg:hidden bg-white inset-0 z-50 flex flex-col overflow-hidden"
     >
       <ul className="px-4 pt-4 flex items-center justify-between text-xl">
         <li className="font-black text-2xl lg:text-3xl xl:text-4xl tracking-tighter">
@@ -76,58 +71,33 @@ export default function MobileMenu() {
             variants={mobileMenuContentVariants}
             key={title}
           >
-            <Link
-              className="text-4xl font-medium relative group"
+            <AnimatedLink
               href={href}
-            >
-              {title}
-              <span className="absolute left-0 bottom-0 bg-gray-500 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out"></span>
-            </Link>
+              title={title}
+              className="text-4xl font-medium"
+            />
           </motion.li>
         ))}
 
         <motion.li
           variants={mobileMenuContentVariants}
-          className="pt-40 text-sm"
+          className="pt-40 pb-8 text-sm"
         >
           <p>Offices</p>
         </motion.li>
-        <motion.li
-          variants={mobileMenuContentVariants}
-          className="pt-8 text-2xl"
-        >
-          <Link
-            href="/"
-            className="relative group"
+
+        {offices.map(({ href, title }) => (
+          <motion.li
+            key={title}
+            variants={mobileMenuContentVariants}
+            className="text-2xl"
           >
-            Jeddah{' '}
-            <span className="absolute left-0 bottom-0 bg-gray-500 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out"></span>
-          </Link>
-        </motion.li>
-        <motion.li
-          variants={mobileMenuContentVariants}
-          className="text-2xl"
-        >
-          <Link
-            href="/"
-            className="relative group"
-          >
-            Riyadh
-            <span className="absolute left-0 bottom-0 bg-gray-500 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out"></span>
-          </Link>
-        </motion.li>
-        <motion.li
-          variants={mobileMenuContentVariants}
-          className="text-2xl"
-        >
-          <Link
-            href={'/'}
-            className="relative group"
-          >
-            Cairo{' '}
-            <span className="absolute left-0 bottom-0 bg-gray-500 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out"></span>
-          </Link>
-        </motion.li>
+            <AnimatedLink
+              href={href}
+              title={title}
+            />
+          </motion.li>
+        ))}
       </ul>
 
       {/* footer */}

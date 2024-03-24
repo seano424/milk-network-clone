@@ -8,6 +8,8 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { useAtom } from 'jotai'
 import { modalAtom } from '../atoms'
 import MobileMenu from './MobileMenu'
+import AnimatedLink from './AnimatedLink'
+import pages from '@/utilities/pages'
 
 const navbarVariants = {
   open: { translateY: 0, transition: { duration: 0.5 } },
@@ -40,17 +42,21 @@ export default function Header() {
       {/* Navbar #1 */}
       <nav className="absolute z-10 left-1/2 right-0 top-0 p-4 flex justify-end items-center gap-3 xl:justify-between text-xl ">
         <div className="hidden gap-3 lg:flex xl:gap-8">
-          <Link href="/">Work</Link>
-          <Link href="/">Expertise</Link>
-          <Link href="/">Community</Link>
-          <Link href="/">Discover</Link>
+          {pages.slice(0, 4).map(({ href, title }) => (
+            <AnimatedLink
+              key={title}
+              href={href}
+              title={title}
+            />
+          ))}
         </div>
-        <Link
-          className="hidden lg:block underline underline-offset-4"
+        <AnimatedLink
           href="/"
-        >
-          Contact
-        </Link>
+          title="Contact"
+          invert
+          className="hidden lg:block underline underline-offset-4"
+        />
+
         <button
           onClick={() => setModal(true)}
           className="lg:hidden"
