@@ -93,10 +93,16 @@ export default function Hero() {
         </motion.div>
 
         {/* bottom right paragraph */}
-        <p className="absolute right-0 bottom-0 text-2xl z-10 w-1/2 px-7 pb-16 leading-7 tracking-tight">
-          Milk Network &trade; is a brand development firm that works in thought
-          and in action.
-        </p>
+        <div className="absolute right-0 bottom-0 z-10 w-1/2 px-7 pb-16 xl:pb-4">
+          <p className="text-2xl leading-7 tracking-tight xl:text-5xl">
+            Milk Network
+            <span className="font-thin tracking-tighter">&trade;</span> is a
+            brand development firm that works in thought and in action.
+          </p>
+          <p className="hidden xl:block mt-10 underline text-xl underline-offset-4 text-stone-400">
+            Scroll down
+          </p>
+        </div>
       </div>
 
       {/* Navbar #1 */}
