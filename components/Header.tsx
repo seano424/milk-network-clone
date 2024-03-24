@@ -1,20 +1,23 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
-const pages = [
-  { title: 'Work', href: '/' },
-  { title: 'Expertise', href: '/' },
-  { title: 'Community', href: '/' },
-  { title: 'Discover', href: '/' },
-]
+import { useAtom } from 'jotai'
+import { modalAtom } from '../atoms'
+import MobileMenu from './MobileMenu'
+
+const navbarVariants = {
+  open: { translateY: 0, transition: { duration: 0.5 } },
+  closed: { translateY: -80, transition: { duration: 0.7 } },
+}
 
 export default function Header() {
   const [isTop, setIsTop] = useState(true)
   const { scrollY } = useScroll()
+  const [isModalOpen, setModal] = useAtom(modalAtom)
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     if (latest > 0) {
@@ -24,15 +27,18 @@ export default function Header() {
     }
   })
 
-  const navbarVariants = {
-    open: { translateY: 0, transition: { duration: 0.5 } },
-    closed: { translateY: -80, transition: { duration: 0.7 } },
-  }
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isModalOpen])
 
   return (
     <>
       {/* Navbar #1 */}
-      <nav className="absolute z-10 left-1/2 right-0 top-0 p-4 flex justify-end items-center gap-3 xl:justify-between text-xl">
+      <nav className="absolute z-10 left-1/2 right-0 top-0 p-4 flex justify-end items-center gap-3 xl:justify-between text-xl ">
         <div className="hidden gap-3 lg:flex xl:gap-8">
           <Link href="/">Work</Link>
           <Link href="/">Expertise</Link>
@@ -46,7 +52,7 @@ export default function Header() {
           Contact
         </Link>
         <button
-          onClick={() => alert('hello from the menu button #1')}
+          onClick={() => setModal(true)}
           className="lg:hidden"
         >
           Menu
@@ -81,7 +87,7 @@ export default function Header() {
             Contact
           </Link>
           <button
-            onClick={() => alert('hello from the menu button #2')}
+            onClick={() => setModal(true)}
             className="lg:hidden"
           >
             Menu
@@ -89,33 +95,7 @@ export default function Header() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
-      <nav className="fixed bg-white inset-0 z-50 flex flex-col">
-        <div className="flex items-center justify-between text-xl border-b border-black p-4">
-          <Link
-            href={'/'}
-            className="font-black text-2xl lg:text-3xl xl:text-4xl tracking-tighter"
-          >
-            milk
-          </Link>
-          <button
-            onClick={() => alert('hello from the menu button #2')}
-            className="lg:hidden"
-          >
-            Menu
-          </button>
-        </div>
-        <div className="flex flex-col gap-4 p-4">
-          {pages.map(({ href, title }) => (
-            <Link
-              key={title}
-              href={href}
-            >
-              {title}
-            </Link>
-          ))}
-        </div>
-      </nav>
+      <MobileMenu />
     </>
   )
 }
