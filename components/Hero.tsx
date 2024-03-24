@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { ReactTyped } from 'react-typed'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
@@ -21,28 +22,61 @@ export default function Hero() {
       ref={ref}
       className="bg-blue-100 relative h-[300vh]"
     >
-      <div className="h-screen sticky top-0 pl-4 pt-6 lg:pb-16 lg:px-16 z-10">
-        <h1 className="text-6xl lg:text-9xl leading-[.4] tracking-[-0.3rem] flex flex-col">
-          We Grow{' '}
-          <span className="flex gap-1">
+      {/* Hero Header */}
+      <div className="h-screen sticky top-0 p-4">
+        <h1 className="text-6xl lg:text-9xl tracking-[-0.3rem] lg:font-semibold">
+          <div className="-mb-2 lg:-mb-10">We Grow </div>
+          <div className="flex gap-1">
             <span className="animate-blink">_</span>
             <ReactTyped
-              strings={['Talent', 'Knowledge', 'People', 'Community', 'Ideas']}
+              strings={[
+                'Talent',
+                'Knowledge',
+                'People',
+                'Community',
+                'Ideas',
+                'Businessess',
+              ]}
               typeSpeed={70}
               backSpeed={50}
               attr="placeholder"
               loop
             >
               <input
-                className="text-black bg-white/0 placeholder:text-black "
+                className="text-black bg-white/0 placeholder:text-black w-full"
                 type="text"
               />
             </ReactTyped>
-          </span>
+          </div>
         </h1>
       </div>
 
-      <div className="absolute left-0 top-0 w-full h-full z-50">
+      {/* Navbar #1 */}
+      <div className="absolute z-10 left-1/2 right-0 top-0 p-4 flex justify-end items-center gap-3 xl:justify-between text-xl">
+        <div className="hidden gap-3 lg:flex xl:gap-8">
+          <Link href="/">Work</Link>
+          <Link href="/">Expertise</Link>
+          <Link href="/">Community</Link>
+          <Link href="/">Discover</Link>
+        </div>
+        <Link
+          className="hidden lg:block underline underline-offset-4"
+          href="/"
+        >
+          Contact
+        </Link>
+        <button
+          onClick={() => alert('hello from the menu button')}
+          className="lg:hidden"
+        >
+          Menu
+        </button>
+      </div>
+
+      {/* Navbar #2 */}
+
+      {/* Video Box Animation */}
+      <div className="absolute left-0 top-0 w-full h-full">
         <div className="h-screen flex items-center justify-center sticky top-0">
           <motion.div
             style={{ scale, clipPath }}
