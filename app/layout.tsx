@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={clsx(dmSans.className, devMode && 'debug-screens')}
       >
+        <Header />
         {children}
       </body>
     </html>
