@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import { ReactTyped } from 'react-typed'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function Hero() {
@@ -20,9 +21,24 @@ export default function Hero() {
       ref={ref}
       className="bg-blue-100 relative h-[300vh]"
     >
-      <div className="h-screen sticky top-0 pb-16 px-16 z-10">
-        <h1 className="text-9xl flex flex-col">
-          We grow <span>Talents</span>
+      <div className="h-screen sticky top-0 pl-4 pt-6 lg:pb-16 lg:px-16 z-10">
+        <h1 className="text-6xl lg:text-9xl leading-[.4] tracking-[-0.3rem] flex flex-col">
+          We Grow{' '}
+          <span className="flex gap-1">
+            <span className="animate-blink">_</span>
+            <ReactTyped
+              strings={['Talent', 'Knowledge', 'People', 'Community', 'Ideas']}
+              typeSpeed={70}
+              backSpeed={50}
+              attr="placeholder"
+              loop
+            >
+              <input
+                className="text-black bg-white/0 placeholder:text-black "
+                type="text"
+              />
+            </ReactTyped>
+          </span>
         </h1>
       </div>
 
