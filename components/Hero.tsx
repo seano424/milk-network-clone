@@ -35,11 +35,19 @@ export default function Hero() {
     closed: { translateY: -80, transition: { duration: 0.7 } },
   }
 
+  const bottomLogoVariants = {
+    show: { opacity: 100, transition: { duration: 0.3 } },
+    hide: { opacity: 0, transition: { duration: 0.3 } },
+  }
+
   return (
     <div
       ref={ref}
-      className="bg-blue-100 relative h-[300vh]"
+      className="relative h-[300vh]"
     >
+      {/* middle line */}
+      <div className="absolute w-0.5 h-full bg-gray-100 left-1/2 top-0"></div>
+
       {/* Hero Header */}
       <div className="h-screen sticky top-0 p-4">
         <h1 className="text-6xl lg:text-9xl tracking-[-0.3rem] lg:font-semibold">
@@ -67,6 +75,22 @@ export default function Hero() {
             </ReactTyped>
           </div>
         </h1>
+
+        {/* bottom left logo (hides on scroll) */}
+        <motion.div
+          initial="show"
+          animate={isTop ? 'show' : 'hide'}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          variants={bottomLogoVariants}
+          className="absolute left-0 bottom-0 p-4 z-10"
+        >
+          <Link
+            href="/"
+            className="font-black text-5xl lg:text-3xl xl:text-4xl tracking-tighter"
+          >
+            milk
+          </Link>
+        </motion.div>
       </div>
 
       {/* Navbar #1 */}
