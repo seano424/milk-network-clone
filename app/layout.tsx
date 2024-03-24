@@ -19,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, devMode && 'debug-screens')}>
+      <body
+        suppressHydrationWarning={true}
+        className={clsx(inter.className, devMode && 'debug-screens')}
+      >
         {children}
       </body>
     </html>
