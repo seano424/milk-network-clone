@@ -86,11 +86,17 @@ export default function Hero() {
         >
           <Link
             href="/"
-            className="font-black text-5xl lg:text-3xl xl:text-4xl tracking-tighter"
+            className="font-black text-5xl tracking-tighter"
           >
             milk
           </Link>
         </motion.div>
+
+        {/* bottom right paragraph */}
+        <p className="absolute right-0 bottom-0 text-2xl z-10 w-1/2 px-7 pb-16 leading-7 tracking-tight">
+          Milk Network &trade; is a brand development firm that works in thought
+          and in action.
+        </p>
       </div>
 
       {/* Navbar #1 */}
