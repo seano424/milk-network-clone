@@ -5,6 +5,13 @@ import { useState } from 'react'
 
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 
+const pages = [
+  { title: 'Work', href: '/' },
+  { title: 'Expertise', href: '/' },
+  { title: 'Community', href: '/' },
+  { title: 'Discover', href: '/' },
+]
+
 export default function Header() {
   const [isTop, setIsTop] = useState(true)
   const { scrollY } = useScroll()
@@ -52,7 +59,7 @@ export default function Header() {
         initial="closed"
         animate={isTop ? 'closed' : 'open'}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        className="fixed left-0 right-0 top-0 p-4 flex items-center justify-between text-xl bg-white z-10"
+        className="fixed left-0 right-0 top-0 p-4 flex items-center justify-between text-xl bg-white z-40"
       >
         <Link
           href={'/'}
@@ -81,6 +88,34 @@ export default function Header() {
           </button>
         </div>
       </motion.nav>
+
+      {/* Mobile Menu */}
+      <nav className="fixed bg-white inset-0 z-50 flex flex-col">
+        <div className="flex items-center justify-between text-xl border-b border-black p-4">
+          <Link
+            href={'/'}
+            className="font-black text-2xl lg:text-3xl xl:text-4xl tracking-tighter"
+          >
+            milk
+          </Link>
+          <button
+            onClick={() => alert('hello from the menu button #2')}
+            className="lg:hidden"
+          >
+            Menu
+          </button>
+        </div>
+        <div className="flex flex-col gap-4 p-4">
+          {pages.map(({ href, title }) => (
+            <Link
+              key={title}
+              href={href}
+            >
+              {title}
+            </Link>
+          ))}
+        </div>
+      </nav>
     </>
   )
 }
