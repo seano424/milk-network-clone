@@ -1,8 +1,11 @@
 'use client'
 
-import Link from 'next/link'
-import { useRef, useState, useEffect } from 'react'
+import { useSetAtom } from 'jotai'
+import { isTopAtom } from '@/atoms'
+import { useRef, useEffect } from 'react'
+import AnimatedText from './AnimatedText'
 import { ReactTyped } from 'react-typed'
+import { useInView } from 'react-intersection-observer'
 import {
   motion,
   useScroll,
@@ -10,12 +13,11 @@ import {
   useMotionValueEvent,
   useAnimation,
 } from 'framer-motion'
-import AnimatedText from './AnimatedText'
-import { useInView } from 'react-intersection-observer'
+
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
-  const [isTop, setIsTop] = useState(true)
+  const setIsTop = useSetAtom(isTopAtom)
   const { scrollYProgress, scrollY } = useScroll({ target: ref })
   const inputRange = [0, 1]
   const outputRange = [0.8, 1]
@@ -66,10 +68,6 @@ export default function Hero() {
     }
   })
 
-  const bottomLogoVariants = {
-    show: { opacity: 100, transition: { duration: 0.3 } },
-    hidden: { opacity: 0, transition: { duration: 0.3 } },
-  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -140,21 +138,6 @@ export default function Hero() {
           </motion.div>
         </h1>
 
-        {/* bottom left logo (hides on scroll) */}
-        <motion.div
-          initial="show"
-          animate={isTop ? 'show' : 'hidden'}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          variants={bottomLogoVariants}
-          className="absolute left-0 bottom-0 p-4 z-10"
-        >
-          <Link
-            href="/"
-            className="font-black text-5xl tracking-tighter"
-          >
-            milk
-          </Link>
-        </motion.div>
 
         {/* bottom right paragraph */}
         <div className="absolute right-0 bottom-0 z-10 w-1/2 px-7 pb-16 xl:pb-4">

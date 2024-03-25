@@ -3,12 +3,13 @@
 import { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import AnimatedText from './AnimatedText'
-import { loadingAtom } from '@/atoms'
-import { useSetAtom } from 'jotai'
+import { loadingAtom, isTopAtom } from '@/atoms'
+import { useSetAtom, useAtomValue } from 'jotai'
 
 export default function Intro() {
   const controls = useAnimation()
   const setLoading = useSetAtom(loadingAtom)
+  const isTop = useAtomValue(isTopAtom)
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -28,7 +29,7 @@ export default function Intro() {
     }
   }, [])
 
-  const textAnimation = {
+  const textVariants = {
     grow: {
       originX: 0,
       originY: 1,
@@ -49,10 +50,8 @@ export default function Intro() {
     },
   }
 
-  const viewAnimation = {
+  const viewVariants = {
     hidden: {
-      opacity: 0,
-      zIndex: -1,
       transition: {
         duration: 1,
         ease: [0.2, 0.65, 0.3, 0.9],
@@ -64,24 +63,37 @@ export default function Intro() {
     },
   }
 
+  const isTopVariants = {
+    show: { opacity: 100, transition: { duration: 0.3 } },
+    hidden: { opacity: 0, transition: { duration: 0.3 } },
+  }
+
   return (
     <motion.div
-      variants={viewAnimation}
       initial="show"
-      animate={controls}
-      className="h-screen w-full bg-white fixed flex items-end left-1 z-50"
+      animate={isTop ? 'show' : 'hidden'}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      variants={isTopVariants}
+      className="z-0 relative"
     >
-      <motion.h1
+      <motion.div
+        variants={viewVariants}
+        initial="show"
         animate={controls}
-        variants={textAnimation}
-        initial="grow"
-        className="font-black tracking-tighter h-max relative text-[24rem] leading-[330px] left-[11.5px] bottom-[20px]"
+        className="w-full bg-white fixed bottom-0 flex items-end left-1 z-50"
       >
-        <AnimatedText
-          Tag={'div'}
-          text="milk"
-        />
-      </motion.h1>
+        <motion.h1
+          animate={controls}
+          variants={textVariants}
+          initial="grow"
+          className="font-black tracking-tighter max-h-max relative text-[24rem] xl:text-[32rem] leading-[330px] xl:leading-[400px] left-[11.5px] bottom-[20px]"
+        >
+          <AnimatedText
+            Tag={'div'}
+            text="milk"
+          />
+        </motion.h1>
+      </motion.div>
     </motion.div>
   )
 }
