@@ -143,7 +143,7 @@ export default function Hero() {
         {/* bottom left logo (hides on scroll) */}
         <motion.div
           initial="show"
-          animate={isTop ? 'show' : 'hide'}
+          animate={isTop ? 'show' : 'hidden'}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           variants={bottomLogoVariants}
           className="absolute left-0 bottom-0 p-4 z-10"
