@@ -2,8 +2,13 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  useAnimation,
+} from 'framer-motion'
 
 import { useAtom } from 'jotai'
 import { modalAtom } from '../atoms'
@@ -33,10 +38,41 @@ export default function Header() {
     }
   }, [isModalOpen])
 
+  const controls = useAnimation()
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+    if (!inView) {
+      controls.start('hidden')
+    }
+  }, [controls, inView])
+
+  const menuInViewAnimation = {
+    hidden: { translateY: -200 },
+    visible: {
+      translateY: 0,
+      transition: {
+        duration: 1,
+        ease: [0.2, 0.65, 0.3, 0.9],
+        delay: 0.5,
+      },
+    },
+  }
+
   return (
     <>
       {/* Navbar #1 */}
-      <nav className="absolute z-10 left-1/2 right-0 top-0 p-4 flex justify-end items-center gap-3 xl:justify-between text-xl ">
+      <nav
+        ref={ref}
+        className="absolute z-10 left-1/2 right-0 top-0 p-4 flex justify-end items-center gap-3 xl:justify-between text-xl "
+      >
         <div className="hidden gap-3 lg:flex xl:gap-8">
           {pages.slice(0, 4).map(({ href, title }) => (
             <AnimatedLink
@@ -53,12 +89,15 @@ export default function Header() {
           className="hidden lg:block underline underline-offset-4"
         />
 
-        <button
+        <motion.button
+          variants={menuInViewAnimation}
+          initial="hidden"
+          animate={controls}
           onClick={() => setModal(true)}
           className="lg:hidden"
         >
           Menu
-        </button>
+        </motion.button>
       </nav>
 
       {/* Navbar #2 (enter on scroll) */}
