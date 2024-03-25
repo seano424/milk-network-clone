@@ -153,7 +153,7 @@ export default function Hero() {
       </div>
 
       {/* Video Box Animation */}
-      <div className="absolute left-0 top-0 w-full h-full">
+      <div className="absolute left-0 top-0 w-full h-full p-4">
         <div className="h-screen flex items-center justify-center sticky top-0">
           <motion.div
             style={{ scale, clipPath }}
