@@ -9,6 +9,7 @@ import {
   useTransform,
   useMotionValueEvent,
 } from 'framer-motion'
+import AnimatedText from './AnimatedText'
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
@@ -46,8 +47,13 @@ export default function Hero() {
       {/* Hero Header */}
       <div className="h-screen sticky top-0 p-4">
         <h1 className="text-6xl lg:text-9xl tracking-[-0.3rem] lg:font-semibold">
-          <div className="-mb-2 lg:-mb-10">We Grow </div>
-          <div className="flex gap-1">
+          <AnimatedText
+            className="-mb-2 lg:-mb-10"
+            Tag={'div'}
+            text="We Grow"
+          />
+
+          <motion.div className="flex gap-1">
             <span className="animate-blink">_</span>
             <ReactTyped
               strings={[
@@ -68,7 +74,7 @@ export default function Hero() {
                 type="text"
               />
             </ReactTyped>
-          </div>
+          </motion.div>
         </h1>
 
         {/* bottom left logo (hides on scroll) */}
