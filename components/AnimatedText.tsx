@@ -19,12 +19,11 @@ export default function AnimatedText(props: Props) {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.5,
-    
   })
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible')
+      controls.start('show')
     }
     if (!inView) {
       controls.start('hidden')
@@ -33,10 +32,10 @@ export default function AnimatedText(props: Props) {
 
   const characterAnimation = {
     hidden: { translateY: 400 },
-    visible: {
+    show: {
       translateY: 0,
       transition: {
-        duration: 0.5,
+        duration: 1.5,
         ease: [0.2, 0.65, 0.3, 0.9],
       },
     },
@@ -44,7 +43,7 @@ export default function AnimatedText(props: Props) {
 
   const wordAnimation = {
     hidden: {},
-    visible: {},
+    show: {},
   }
 
   return (

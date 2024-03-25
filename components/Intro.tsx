@@ -13,7 +13,7 @@ export default function Intro() {
       controls.start('shrink')
       controls.start('hidden')
       document.body.style.overflow = 'auto'
-    }, 1000)
+    }, 2000)
   }, [])
 
   const textAnimation = {
@@ -31,7 +31,7 @@ export default function Intro() {
       originY: 1,
       scale: 0.125,
       transition: {
-        duration: 1,
+        duration: 1.75,
         ease: [0.2, 0.65, 0.3, 0.9],
       },
     },
@@ -39,15 +39,15 @@ export default function Intro() {
 
   const viewAnimation = {
     hidden: {
-      opacity: 0,
-      zIndex: -1,
+      // opacity: 0,
+      // zIndex: -1,
       transition: {
         duration: 1,
         ease: [0.2, 0.65, 0.3, 0.9],
         delay: 2,
       },
     },
-    visible: {
+    show: {
       opacity: 1,
     },
   }
@@ -55,7 +55,7 @@ export default function Intro() {
   return (
     <motion.div
       variants={viewAnimation}
-      initial="visible"
+      initial="show"
       animate={controls}
       className="h-screen w-full bg-white fixed flex items-end left-1 z-50"
     >
