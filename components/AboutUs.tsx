@@ -6,19 +6,19 @@ export default function AboutUs() {
   return (
     <div className="grid grid-cols-2 px-4 py-20">
       <div className="col-start-2 flex flex-col gap-2">
-        <div className="flex justify-between items-center text-xl">
+        <div className="flex justify-between items-center text-xl xl:text-5xl">
           <p>About us</p>
           <p>&copy; 12-24</p>
         </div>
 
         <Link
           href="/"
-          className="flex justify-between items-center bg-black w-full rounded-lg py-3 px-4 text-white relative group  overflow-hidden"
+          className="flex justify-between items-center bg-black w-full rounded-lg py-3 px-4 text-white relative group  overflow-hidden xl:text-xl"
         >
           <div className="w-full h-full">
             <span
               className={clsx(
-                'absolute py-3 px-4 inset-0 transform transition-transform duration-300 ease-linear translate-y-0',
+                'absolute flex items-center px-4 inset-0 transform transition-transform duration-300 ease-linear translate-y-0',
                 'group-hover:-translate-y-12'
               )}
             >
@@ -26,7 +26,7 @@ export default function AboutUs() {
             </span>
             <span
               className={clsx(
-                'absolute py-3 px-4 inset-0 transform transition-transform duration-300 ease-linear translate-y-12',
+                'absolute flex items-center px-4 inset-0 transform transition-transform duration-300 ease-linear translate-y-12',
                 'group-hover:translate-y-0 z-10',
                 'group-hover:bg-gray-700/70'
               )}
@@ -40,7 +40,7 @@ export default function AboutUs() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 relative z-10"
+            className="w-6 h-6 xl:h-10 xl:w-10 relative z-10"
           >
             <path
               strokeLinecap="round"
