@@ -3,17 +3,29 @@
 import { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import AnimatedText from './AnimatedText'
+import { loadingAtom } from '@/atoms'
+import { useSetAtom } from 'jotai'
 
 export default function Intro() {
   const controls = useAnimation()
+  const setLoading = useSetAtom(loadingAtom)
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       controls.start('shrink')
       controls.start('hidden')
       document.body.style.overflow = 'auto'
     }, 2000)
+
+    const timeout2 = setTimeout(() => {
+      setLoading(false)
+    }, 4000)
+
+    return () => {
+      clearTimeout(timeout)
+      clearTimeout(timeout2)
+    }
   }, [])
 
   const textAnimation = {
@@ -39,8 +51,8 @@ export default function Intro() {
 
   const viewAnimation = {
     hidden: {
-      // opacity: 0,
-      // zIndex: -1,
+      opacity: 0,
+      zIndex: -1,
       transition: {
         duration: 1,
         ease: [0.2, 0.65, 0.3, 0.9],
