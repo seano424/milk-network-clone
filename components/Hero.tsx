@@ -25,7 +25,7 @@ export default function Hero() {
     'inset(0% round 0rem)',
   ])
 
-  const { ref: h1Ref, inView } = useInView({
+  const { ref: typedAnimationRef, inView } = useInView({
     triggerOnce: true,
     threshold: 0.5,
   })
@@ -34,7 +34,7 @@ export default function Hero() {
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible')
+      controls.start('show')
     }
     if (!inView) {
       controls.start('hidden')
@@ -43,16 +43,17 @@ export default function Hero() {
 
   const h1Animation = {
     hidden: {},
-    visible: {},
+    show: {},
   }
 
-  const typedAnimation = {
+  const typedAnimationVariants = {
     hidden: { translateY: 200 },
-    visible: {
+    show: {
       translateY: 0,
       transition: {
         duration: 1,
         ease: [0.2, 0.65, 0.3, 0.9],
+        delay: 1,
       },
     },
   }
@@ -67,12 +68,26 @@ export default function Hero() {
 
   const bottomLogoVariants = {
     show: { opacity: 100, transition: { duration: 0.3 } },
-    hide: { opacity: 0, transition: { duration: 0.3 } },
+    hidden: { opacity: 0, transition: { duration: 0.3 } },
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 5,
+        staggerChildren: 5,
+      },
+    },
   }
 
   return (
-    <div
+    <motion.div
       ref={ref}
+      initial="hidden"
+      variants={containerVariants}
+      animate={controls}
       className="relative h-[300vh]"
     >
       {/* divider line */}
@@ -88,9 +103,7 @@ export default function Hero() {
           />
 
           <motion.div
-            ref={h1Ref}
-            initial="hidden"
-            animate={controls}
+            ref={typedAnimationRef}
             variants={h1Animation}
             transition={{
               delayChildren: 0.25,
@@ -99,7 +112,7 @@ export default function Hero() {
             className="flex gap-1 overflow-hidden"
           >
             <motion.span
-              variants={typedAnimation}
+              variants={typedAnimationVariants}
               className="animate-blink inline-block"
             >
               _
@@ -119,7 +132,7 @@ export default function Hero() {
               loop
             >
               <motion.input
-                variants={typedAnimation}
+                variants={typedAnimationVariants}
                 className="text-black bg-white/0 placeholder:text-black w-full"
                 type="text"
               />
@@ -178,6 +191,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

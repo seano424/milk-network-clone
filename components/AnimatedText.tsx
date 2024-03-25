@@ -19,6 +19,7 @@ export default function AnimatedText(props: Props) {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.5,
+    
   })
 
   useEffect(() => {
@@ -31,11 +32,11 @@ export default function AnimatedText(props: Props) {
   }, [controls, inView])
 
   const characterAnimation = {
-    hidden: { translateY: 200 },
+    hidden: { translateY: 400 },
     visible: {
       translateY: 0,
       transition: {
-        duration: 1,
+        duration: 0.5,
         ease: [0.2, 0.65, 0.3, 0.9],
       },
     },
@@ -59,7 +60,7 @@ export default function AnimatedText(props: Props) {
             className="relative inline-block mr-2"
             transition={{
               delayChildren: index * 0.25,
-              staggerChildren: 0.05,
+              staggerChildren: 0.12,
             }}
           >
             {word.split('').map((char, index) => {

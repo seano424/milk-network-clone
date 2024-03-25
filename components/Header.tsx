@@ -106,7 +106,7 @@ export default function Header() {
         initial="closed"
         animate={isTop ? 'closed' : 'open'}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        className="fixed left-0 right-0 top-0 p-4 flex items-center justify-between text-xl bg-white z-40"
+        className="fixed left-0 right-0 top-0 p-4 flex items-center justify-between text-xl bg-white z-30"
       >
         <Link
           href={'/'}

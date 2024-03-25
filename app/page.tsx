@@ -1,9 +1,11 @@
 import AnimatedText from '@/components/AnimatedText'
 import Hero from '@/components/Hero'
+import Intro from '@/components/Intro'
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
+      <Intro />
       <Hero />
 
       <div>
