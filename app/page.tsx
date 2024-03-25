@@ -8,6 +8,7 @@ import { useAtomValue } from 'jotai'
 import Header from '@/components/Header'
 import NumbersAndFactsGrid from '@/components/NumbersAndFactsGrid'
 import AboutUs from '@/components/AboutUs'
+import WhatWeDo from '@/components/WhatWeDo'
 
 export default function Home() {
   const loading = useAtomValue(loadingAtom)
@@ -21,6 +22,7 @@ export default function Home() {
           <Hero />
           <NumbersAndFactsGrid />
           <AboutUs />
+          <WhatWeDo />
         </>
       )}
     </main>
