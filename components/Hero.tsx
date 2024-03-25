@@ -1,15 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { ReactTyped } from 'react-typed'
 import {
   motion,
   useScroll,
   useTransform,
   useMotionValueEvent,
+  useAnimation,
 } from 'framer-motion'
 import AnimatedText from './AnimatedText'
+import { useInView } from 'react-intersection-observer'
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
@@ -22,6 +24,38 @@ export default function Hero() {
     'inset(35% round 1rem)',
     'inset(0% round 0rem)',
   ])
+
+  const { ref: h1Ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  })
+
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+    if (!inView) {
+      controls.start('hidden')
+    }
+  }, [controls, inView])
+
+  const h1Animation = {
+    hidden: {},
+    visible: {},
+  }
+
+  const typedAnimation = {
+    hidden: { translateY: 200 },
+    visible: {
+      translateY: 0,
+      transition: {
+        duration: 1,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    },
+  }
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     if (latest > 0) {
@@ -53,8 +87,23 @@ export default function Hero() {
             text="We Grow"
           />
 
-          <motion.div className="flex gap-1">
-            <span className="animate-blink">_</span>
+          <motion.div
+            ref={h1Ref}
+            initial="hidden"
+            animate={controls}
+            variants={h1Animation}
+            transition={{
+              delayChildren: 0.25,
+              staggerChildren: 0.05,
+            }}
+            className="flex gap-1 overflow-hidden"
+          >
+            <motion.span
+              variants={typedAnimation}
+              className="animate-blink inline-block"
+            >
+              _
+            </motion.span>
             <ReactTyped
               strings={[
                 'Talent',
@@ -69,7 +118,8 @@ export default function Hero() {
               attr="placeholder"
               loop
             >
-              <input
+              <motion.input
+                variants={typedAnimation}
                 className="text-black bg-white/0 placeholder:text-black w-full"
                 type="text"
               />
