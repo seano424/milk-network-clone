@@ -13,18 +13,12 @@ import {
   useMotionValueEvent,
   useAnimation,
 } from 'framer-motion'
+import Video from './Video'
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
   const setIsTop = useSetAtom(isTopAtom)
   const { scrollYProgress, scrollY } = useScroll({ target: ref })
-  const inputRange = [0, 1]
-  const outputRange = [0.8, 1]
-  const scale = useTransform(scrollYProgress, inputRange, outputRange)
-  const clipPath = useTransform(scrollYProgress, inputRange, [
-    'inset(35% round 1rem)',
-    'inset(0% round 0rem)',
-  ])
 
   const { ref: typedAnimationRef, inView } = useInView({
     triggerOnce: true,
@@ -149,31 +143,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Video Box Animation */}
-      <div className="absolute left-0 top-0 w-full h-full p-4">
-        <div className="h-screen flex items-center justify-center sticky top-0">
-          <motion.div
-            style={{ scale, clipPath }}
-            className="bg-black rounded relative w-full h-full aspect-video min-h-[25rem]"
-          >
-            <video
-              className="w-full h-full entered loaded"
-              autoPlay
-              muted
-              loop
-              playsInline
-              src="https://strapi-cms-3mz0.onrender.com/uploads/240123_Milk_Video_2024_Low_V2_8abec16071.mp4"
-            ></video>
-            <div
-              id="video"
-              className="absolute inset-0 flex gap-2 items-center justify-center text-6xl text-white"
-            >
-              <span className="rounded-full bg-white h-10 w-10"></span>
-              Play
-            </div>
-          </motion.div>
-        </div>
-      </div>
+      {/* Video */}
+      <Video scrollYProgress={scrollYProgress} />
     </motion.div>
   )
 }
