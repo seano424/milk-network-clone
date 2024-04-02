@@ -10,9 +10,7 @@ import clsx from 'clsx'
 
 export default function Cursor() {
   const [isHoveringAnimation, setIsHoveringAnimation] = useState(false)
-  const [typeOfElement, setTypeOfElement] = useState<'video' | 'link' | ''>(
-    'video'
-  )
+  const [typeOfElement, setTypeOfElement] = useState<'video' | 'link' | ''>('')
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
   const springConfig = { damping: 20, stiffness: 120 }
@@ -64,7 +62,7 @@ export default function Cursor() {
       window.removeEventListener('mouseover', handleHoverVideo)
       window.removeEventListener('mouseover', handleHoverLink)
     }
-  }, [cursorX, cursorY])
+  }, [cursorX, cursorY, typeOfElement, isHoveringAnimation])
 
   return (
     <motion.div
@@ -80,7 +78,7 @@ export default function Cursor() {
           : 'mix-blend-difference bg-white'
       )}
     >
-      <AnimatePresence>
+      <AnimatePresence key="video">
         {typeOfElement === 'video' && (
           <svg
             key="cursor"
@@ -98,7 +96,8 @@ export default function Cursor() {
             />
           </svg>
         )}
-
+      </AnimatePresence>
+      <AnimatePresence key="link">
         {typeOfElement === 'link' && (
           <svg
             xmlns="http://www.w3.org/2000/svg"

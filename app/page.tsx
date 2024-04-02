@@ -10,6 +10,7 @@ import CtaLink from '@/components/CtaLink'
 import WhatWeDo from '@/components/WhatWeDo'
 import CtaSpacer from '@/components/CtaSpacer'
 import ImageCtaGrid from '@/components/ImageCtaGrid'
+import CtaLarge from '@/components/CtaLarge'
 
 export default function Home() {
   const loading = useAtomValue(loadingAtom)
@@ -37,6 +38,7 @@ export default function Home() {
             text="31"
             title="Works"
           />
+          <CtaLarge />
         </>
       )}
     </main>

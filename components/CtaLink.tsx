@@ -13,10 +13,11 @@ interface CtaLinkProps {
     label: string
     href: string
   }
+  className?: string
 }
 
 export default function CtaLink(props: CtaLinkProps) {
-  const { title, text, blink, link, copy, fullWidth, time } = props
+  const { title, text, blink, link, copy, fullWidth, time, className } = props
   const [currentTime, setCurrentTime] = useState({
     hour: new Date().getHours(),
     minute: new Date().getMinutes(),
@@ -34,7 +35,7 @@ export default function CtaLink(props: CtaLinkProps) {
   }, [])
 
   return (
-    <div className="grid grid-cols-2 px-4 py-20">
+    <div className={clsx('grid grid-cols-2 px-4 py-20', className)}>
       <div
         className={clsx(
           'flex flex-col gap-2',
