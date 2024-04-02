@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import WhatWeDoBox from './WhatWeDoBox'
 
 const items = [
   {
@@ -29,22 +28,11 @@ export default function WhatWeDo() {
         <span className="bg-black rounded-full h-3 w-3"></span>
         What we do
       </div>
-      {items.map(({ href, imgSrc, title }) => (
-        <Link
-          href={href}
-          className="grid grid-cols-2 border-b py-4 border-gray-200"
-        >
-          <div className="flex flex-col justify-end">{title}</div>
-          <div className="w-full h-56 relative">
-            <Image
-              fill
-              alt={title}
-              src={imgSrc}
-              className="object-cover rounded-lg"
-              sizes="(min-width: 640px) 50vw, 100vw"
-            />
-          </div>
-        </Link>
+      {items.map(({ href, imgSrc, title }, index) => (
+        <WhatWeDoBox
+          key={index}
+          item={{ href, imgSrc, title }}
+        />
       ))}
     </div>
   )

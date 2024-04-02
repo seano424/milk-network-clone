@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <main>
-      <Intro />
+      {/* <Intro /> */}
       {!loading && (
         <>
           <Header />

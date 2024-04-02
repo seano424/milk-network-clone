@@ -1,24 +1,11 @@
-'use client'
-
-import AnimatedText from '@/components/AnimatedText'
-import { useInView } from 'react-intersection-observer'
+import Section from './components/Section'
 
 export default function TestPage() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  })
   return (
-    <div
-      ref={ref}
-      className="p-4 pt-20 min-h-screen"
-    >
-      <AnimatedText
-        Tag={'h2'}
-        text="Hello World"
-      />
-
-      {inView && <p>in view</p>}
+    <div className="p-4 pt-20 min-h-[580vh] border-8 flex flex-col gap-8">
+      <Section />
+      <Section />
+      <Section />
     </div>
   )
 }
