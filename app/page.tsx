@@ -31,6 +31,12 @@ export default function Home() {
           <WhatWeDo />
           <CtaSpacer />
           <ImageCtaGrid />
+          <CtaLink
+            blink
+            link={{ href: '/', label: 'Discover all works' }}
+            text="31"
+            title="Works"
+          />
         </>
       )}
     </main>

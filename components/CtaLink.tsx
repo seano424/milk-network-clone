@@ -1,11 +1,14 @@
-import Link from 'next/link'
 import clsx from 'clsx'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 interface CtaLinkProps {
   title: string
-  text: string
+  text?: string
   blink?: boolean
   copy?: boolean
+  time?: boolean
+  fullWidth?: boolean
   link: {
     label: string
     href: string
@@ -13,17 +16,44 @@ interface CtaLinkProps {
 }
 
 export default function CtaLink(props: CtaLinkProps) {
-  const { title, text, blink, link, copy } = props
+  const { title, text, blink, link, copy, fullWidth, time } = props
+  const [currentTime, setCurrentTime] = useState({
+    hour: new Date().getHours(),
+    minute: new Date().getMinutes(),
+  })
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime({
+        hour: new Date().getHours(),
+        minute: new Date().getMinutes(),
+      })
+    }, 60000)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="grid grid-cols-2 px-4 py-20">
-      <div className="col-start-2 flex flex-col gap-2">
+      <div
+        className={clsx(
+          'flex flex-col gap-2',
+          fullWidth ? 'col-span-2' : 'col-start-2'
+        )}
+      >
         <div className="flex justify-between items-center text-xl xl:text-5xl">
           <p>{title}</p>
           <p>
             {copy && <span>&copy;</span>}
             {blink && <span className="animate-blink inline-block">_</span>}
-            {text}
+            {text && <span>{text}</span>}
+            {time && (
+              <span className="flex items-center">
+                {currentTime.hour}
+                <span className="animate-blink">:</span>
+                {currentTime.minute}
+              </span>
+            )}
           </p>
         </div>
 
