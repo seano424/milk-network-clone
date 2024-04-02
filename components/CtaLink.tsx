@@ -1,17 +1,34 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 
-export default function AboutUs() {
+interface CtaLinkProps {
+  title: string
+  text: string
+  blink?: boolean
+  copy?: boolean
+  link: {
+    label: string
+    href: string
+  }
+}
+
+export default function CtaLink(props: CtaLinkProps) {
+  const { title, text, blink, link, copy } = props
+
   return (
     <div className="grid grid-cols-2 px-4 py-20">
       <div className="col-start-2 flex flex-col gap-2">
         <div className="flex justify-between items-center text-xl xl:text-5xl">
-          <p>About us</p>
-          <p>&copy; 12-24</p>
+          <p>{title}</p>
+          <p>
+            {copy && <span>&copy;</span>}
+            {blink && <span className="animate-blink inline-block">_</span>}
+            {text}
+          </p>
         </div>
 
         <Link
-          href="/"
+          href={link.href}
           className="flex justify-between items-center bg-black w-full rounded-lg py-3 px-4 text-white relative group  overflow-hidden xl:text-xl"
         >
           <div className="w-full h-full">
@@ -21,7 +38,7 @@ export default function AboutUs() {
                 'group-hover:-translate-y-12'
               )}
             >
-              Read more
+              {link.label}
             </span>
             <span
               className={clsx(
@@ -30,7 +47,7 @@ export default function AboutUs() {
                 'group-hover:bg-gray-700/70'
               )}
             >
-              Read more
+              {link.label}
             </span>
           </div>
           <svg

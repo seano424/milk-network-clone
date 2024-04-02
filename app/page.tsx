@@ -1,13 +1,12 @@
 'use client'
 
-import AnimatedText from '@/components/AnimatedText'
 import Hero from '@/components/Hero'
 import Intro from '@/components/Intro'
 import { loadingAtom } from '@/atoms'
 import { useAtomValue } from 'jotai'
 import Header from '@/components/Header'
 import NumbersAndFactsGrid from '@/components/NumbersAndFactsGrid'
-import AboutUs from '@/components/AboutUs'
+import CtaLink from '@/components/CtaLink'
 import WhatWeDo from '@/components/WhatWeDo'
 
 export default function Home() {
@@ -21,7 +20,12 @@ export default function Home() {
           <Header />
           <Hero />
           <NumbersAndFactsGrid />
-          <AboutUs />
+          <CtaLink
+            copy
+            link={{ href: '/', label: 'Read more' }}
+            text="12-24"
+            title="About us"
+          />
           <WhatWeDo />
         </>
       )}
