@@ -15,7 +15,7 @@ import { modalAtom } from '../atoms'
 import MobileMenu from './MobileMenu'
 import AnimatedLink from './AnimatedLink'
 import pages from '@/utilities/pages'
-import { navbarVariants } from '@/utilities/headerVariants'
+import { navbarVariants } from '@/utilities/variants'
 
 export default function Header() {
   const [isTop, setIsTop] = useState(true)

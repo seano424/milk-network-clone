@@ -12,7 +12,7 @@ import {
   mobileMenuContentVariants,
   mobileMenuLeftToRightVariants,
   mobileMenuVariants,
-} from '@/utilities/headerVariants'
+} from '@/utilities/variants'
 
 export default function MobileMenu() {
   const [isModalOpen, setModal] = useAtom(modalAtom)
