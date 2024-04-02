@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import AnimatedLink from './AnimatedLink'
+import clsx from 'clsx'
 
 const gridItems = [
   {
@@ -87,16 +88,26 @@ const gridItems = [
 
 export default function ImageCtaGrid() {
   return (
-    <div className="grid grid-cols-2 gap-5 p-4">
+    <div className="grid grid-cols-4 gap-5 p-4">
       {gridItems.map((item, index) => (
-        <div key={index}>
+        <div
+          className={clsx(
+            item.spansTwoColumns ? 'col-span-2 xl:col-span-1' : 'col-span-2',
+            'group'
+          )}
+          key={index}
+        >
           <Link
             href={item.href}
-            id="imageCtaGridItem"
-            className={`group xl:col-span-${item.spansTwoColumns ? '2' : '1'}`}
+            id="link"
           >
             <div className="flex flex-col gap-4">
-              <div className="rounded-lg relative h-80 w-full overflow-hidden">
+              <div
+                className={clsx(
+                  'rounded-lg relative h-80 w-full overflow-hidden',
+                  item.spansTwoColumns ? 'xl:h-80' : 'xl:h-[40rem]'
+                )}
+              >
                 <Image
                   fill
                   sizes="50vw"
