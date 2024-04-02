@@ -14,7 +14,6 @@ import {
   useAnimation,
 } from 'framer-motion'
 
-
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
   const setIsTop = useSetAtom(isTopAtom)
@@ -67,7 +66,6 @@ export default function Hero() {
       setIsTop(true)
     }
   })
-
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -138,7 +136,6 @@ export default function Hero() {
           </motion.div>
         </h1>
 
-
         {/* bottom right paragraph */}
         <div className="absolute right-0 bottom-0 z-10 w-1/2 px-7 pb-16 xl:pb-4">
           <p className="text-2xl leading-7 tracking-tight xl:text-5xl">
@@ -167,7 +164,10 @@ export default function Hero() {
               playsInline
               src="https://strapi-cms-3mz0.onrender.com/uploads/240123_Milk_Video_2024_Low_V2_8abec16071.mp4"
             ></video>
-            <div className="absolute inset-0 flex gap-2 items-center justify-center text-6xl text-white">
+            <div
+              id="video"
+              className="absolute inset-0 flex gap-2 items-center justify-center text-6xl text-white"
+            >
               <span className="rounded-full bg-white h-10 w-10"></span>
               Play
             </div>

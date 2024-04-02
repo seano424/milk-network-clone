@@ -1,8 +1,15 @@
 'use client'
-import { useEffect } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  AnimatePresence,
+} from 'framer-motion'
+import clsx from 'clsx'
 
 export default function Cursor() {
+  const [isHoveringVideo, setIsHoveringVideo] = useState(false)
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
   const springConfig = { damping: 20, stiffness: 120 }
@@ -14,14 +21,59 @@ export default function Cursor() {
       cursorX.set(e.clientX - 16)
       cursorY.set(e.clientY - 16)
     }
+
+    const handleHoverVideo = () => {
+      document.querySelectorAll('#video').forEach((video) => {
+        video.addEventListener('mouseenter', () => {
+          // after .5 ms set isHoveringVideo to true
+          setTimeout(() => setIsHoveringVideo(true), 500)
+        })
+        video.addEventListener('mouseleave', () => setIsHoveringVideo(false))
+      })
+    }
+
     window.addEventListener('mousemove', onMouseMove)
-    return () => window.removeEventListener('mousemove', onMouseMove)
+    window.addEventListener('mouseover', handleHoverVideo)
+
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove)
+      window.removeEventListener('mouseover', handleHoverVideo)
+    }
   }, [])
 
   return (
     <motion.div
       style={{ translateX: cursorXSpring, translateY: cursorYSpring }}
-      className="z-50 hidden xl:block fixed left-0 top-0 w-6 h-6 rounded-full bg-white mix-blend-difference pointer-events-none"
-    />
+      animate={{
+        scale: isHoveringVideo ? 2 : 1,
+        transition: { duration: 0.2 },
+      }}
+      className={clsx(
+        'z-50 fixed left-0 top-0 min-w-10 min-h-10 rounded-full pointer-events-none flex items-center justify-center',
+        isHoveringVideo
+          ? 'bg-black text-white'
+          : 'mix-blend-difference bg-white'
+      )}
+    >
+      <AnimatePresence>
+        {isHoveringVideo && (
+          <motion.svg
+            key="cursor"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+            />
+          </motion.svg>
+        )}
+      </AnimatePresence>
+    </motion.div>
   )
 }
