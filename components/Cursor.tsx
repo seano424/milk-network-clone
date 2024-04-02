@@ -9,7 +9,10 @@ import {
 import clsx from 'clsx'
 
 export default function Cursor() {
-  const [isHoveringVideo, setIsHoveringVideo] = useState(false)
+  const [isHoveringAnimation, setIsHoveringAnimation] = useState(false)
+  const [typeOfElement, setTypeOfElement] = useState<'video' | 'other' | ''>(
+    'video'
+  )
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
   const springConfig = { damping: 20, stiffness: 120 }
@@ -25,10 +28,15 @@ export default function Cursor() {
     const handleHoverVideo = () => {
       document.querySelectorAll('#video').forEach((video) => {
         video.addEventListener('mouseenter', () => {
-          // after .5 ms set isHoveringVideo to true
-          setTimeout(() => setIsHoveringVideo(true), 500)
+          setTimeout(() => {
+            setIsHoveringAnimation(true)
+            setTypeOfElement('video')
+          }, 200)
         })
-        video.addEventListener('mouseleave', () => setIsHoveringVideo(false))
+        video.addEventListener('mouseleave', () => {
+          setIsHoveringAnimation(false)
+          setTypeOfElement('')
+        })
       })
     }
 
@@ -45,18 +53,18 @@ export default function Cursor() {
     <motion.div
       style={{ translateX: cursorXSpring, translateY: cursorYSpring }}
       animate={{
-        scale: isHoveringVideo ? 2 : 1,
+        scale: isHoveringAnimation ? 2.5 : 1,
         transition: { duration: 0.2 },
       }}
       className={clsx(
-        'z-50 fixed left-0 top-0 min-w-10 min-h-10 rounded-full pointer-events-none flex items-center justify-center',
-        isHoveringVideo
+        'z-50 fixed left-0 top-0 min-w-8 min-h-8 rounded-full pointer-events-none flex items-center justify-center',
+        isHoveringAnimation
           ? 'bg-black text-white'
           : 'mix-blend-difference bg-white'
       )}
     >
       <AnimatePresence>
-        {isHoveringVideo && (
+        {typeOfElement === 'video' && (
           <motion.svg
             key="cursor"
             xmlns="http://www.w3.org/2000/svg"
