@@ -2,14 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import {
-  motion,
-  useAnimation,
-  useScroll,
-  useMotionValueEvent,
-} from 'framer-motion'
+import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation, useScroll } from 'framer-motion'
 
 interface WhatWeDoBoxProps {
   item: {
@@ -23,7 +18,6 @@ export default function WhatWeDoBox(props: WhatWeDoBoxProps) {
   const { item } = props
   const { title, href, imgSrc } = item
   const { scrollY } = useScroll()
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down')
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.9,
@@ -32,26 +26,20 @@ export default function WhatWeDoBox(props: WhatWeDoBoxProps) {
   const controls = useAnimation()
 
   useEffect(() => {
+    const scrollDirection =
+      scrollY.get() > (scrollY.getPrevious() ?? 0) ? 'down' : 'up'
+
     if (inView) {
       controls.start('show')
     }
     if (!inView && scrollDirection === 'up') {
       controls.start('hidden')
     }
-  }, [controls, inView, scrollDirection])
-
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    const scrollingDown = latest > (scrollY.getPrevious() ?? 0)
-    if (scrollingDown) {
-      setScrollDirection('down')
-    } else {
-      setScrollDirection('up')
-    }
-  })
+  }, [controls, inView, scrollY])
 
   const whatWeDoBoxVariants = {
     hidden: {
-      scaleX: 0,
+      scaleX: 0.2,
       originX: 0,
       originY: 0,
       transition: {
