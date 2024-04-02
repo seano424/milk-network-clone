@@ -27,7 +27,7 @@ export default function Intro() {
       clearTimeout(timeout)
       clearTimeout(timeout2)
     }
-  }, [])
+  }, [controls, setLoading])
 
   const textVariants = {
     grow: {
