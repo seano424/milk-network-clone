@@ -28,7 +28,7 @@ export default function Section() {
     if (!inView && scrollDirection === 'up') {
       controls.start('hidden')
     }
-  }, [controls, inView])
+  }, [controls, inView, scrollDirection])
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     console.log('scroll y progress', scrollYProgress.get())

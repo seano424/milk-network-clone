@@ -38,7 +38,7 @@ export default function WhatWeDoBox(props: WhatWeDoBoxProps) {
     if (!inView && scrollDirection === 'up') {
       controls.start('hidden')
     }
-  }, [controls, inView])
+  }, [controls, inView, scrollDirection])
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const scrollingDown = latest > (scrollY.getPrevious() ?? 0)

@@ -9,6 +9,7 @@ import NumbersAndFactsGrid from '@/components/NumbersAndFactsGrid'
 import CtaLink from '@/components/CtaLink'
 import WhatWeDo from '@/components/WhatWeDo'
 import CtaSpacer from '@/components/CtaSpacer'
+import ImageCtaGrid from '@/components/ImageCtaGrid'
 
 export default function Home() {
   const loading = useAtomValue(loadingAtom)
@@ -29,6 +30,7 @@ export default function Home() {
           />
           <WhatWeDo />
           <CtaSpacer />
+          <ImageCtaGrid />
         </>
       )}
     </main>

@@ -47,7 +47,7 @@ export default function Cursor() {
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mouseover', handleHoverVideo)
     }
-  }, [])
+  }, [cursorX, cursorY])
 
   return (
     <motion.div
