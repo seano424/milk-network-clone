@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import './globals.css'
 import Providers from './providers'
+import Cursor from '@/components/Cursor'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
@@ -22,8 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={clsx(dmSans.className, devMode && 'debug-screens')}
+        className={clsx(
+          dmSans.className,
+          devMode && 'debug-screens',
+          'bg-white'
+        )}
       >
+        <Cursor />
         <Providers>{children}</Providers>
       </body>
     </html>
