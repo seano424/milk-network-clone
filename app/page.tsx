@@ -8,6 +8,7 @@ import Header from '@/components/Header'
 import NumbersAndFactsGrid from '@/components/NumbersAndFactsGrid'
 import CtaLink from '@/components/CtaLink'
 import WhatWeDo from '@/components/WhatWeDo'
+import CtaSpacer from '@/components/CtaSpacer'
 
 export default function Home() {
   const loading = useAtomValue(loadingAtom)
@@ -27,6 +28,7 @@ export default function Home() {
             title="About us"
           />
           <WhatWeDo />
+          <CtaSpacer />
         </>
       )}
     </main>

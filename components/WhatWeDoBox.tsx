@@ -75,7 +75,7 @@ export default function WhatWeDoBox(props: WhatWeDoBoxProps) {
       href={href}
       className="grid grid-cols-2 border-b py-4 border-gray-200"
     >
-      <div className="flex flex-col justify-end">{title}</div>
+      <h4 className="flex flex-col justify-end text-2xl">{title}</h4>
       <motion.div
         ref={ref}
         initial="hidden"
