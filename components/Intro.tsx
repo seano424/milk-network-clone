@@ -86,7 +86,7 @@ export default function Intro() {
           animate={controls}
           variants={textVariants}
           initial="grow"
-          className="font-black tracking-tighter max-h-max relative text-[24rem] xl:text-[32rem] leading-[330px] xl:leading-[400px] left-[11.5px] bottom-[20px]"
+          className="font-black tracking-tight max-h-max relative text-[24rem] xl:text-[32rem] leading-[330px] xl:leading-[400px] left-[11.5px] bottom-[20px]"
         >
           <AnimatedText
             Tag={'div'}

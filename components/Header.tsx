@@ -14,7 +14,7 @@ import { useAtom } from 'jotai'
 import { modalAtom } from '../atoms'
 import MobileMenu from './MobileMenu'
 import AnimatedLink from './AnimatedLink'
-import pages from '@/utilities/pages'
+import { companyLinks } from '@/utilities/links'
 import { navbarVariants } from '@/utilities/variants'
 
 export default function Header() {
@@ -74,7 +74,7 @@ export default function Header() {
         className="absolute z-10 left-1/2 right-0 top-0 p-4 flex justify-end items-center gap-3 xl:justify-between text-xl "
       >
         <div className="hidden gap-3 lg:flex xl:gap-8">
-          {pages.slice(0, 4).map(({ href, title }) => (
+          {companyLinks.slice(0, 4).map(({ href, title }) => (
             <AnimatedLink
               key={title}
               href={href}

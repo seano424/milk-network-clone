@@ -4,6 +4,7 @@ import { DM_Sans } from 'next/font/google'
 import './globals.css'
 import Providers from './providers'
 import Cursor from '@/components/Cursor'
+import Footer from '@/components/Footer'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
@@ -26,11 +27,14 @@ export default function RootLayout({
         className={clsx(
           dmSans.className,
           devMode && 'debug-screens',
-          'bg-white'
+          'bg-white flex flex-col min-h-screen'
         )}
       >
         <Cursor />
-        <Providers>{children}</Providers>
+        <Providers>
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   )

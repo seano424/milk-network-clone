@@ -6,8 +6,7 @@ import { useEffect } from 'react'
 import { modalAtom } from '../atoms'
 import { motion } from 'framer-motion'
 import AnimatedLink from './AnimatedLink'
-import pages from '@/utilities/pages'
-import offices from '@/utilities/offices'
+import { offices, companyLinks } from '@/utilities/links'
 import {
   mobileMenuContentVariants,
   mobileMenuLeftToRightVariants,
@@ -50,7 +49,7 @@ export default function MobileMenu() {
         className="h-[1px] bg-gray-300"
       />
       <ul className="px-4 pt-12 flex flex-col gap-2">
-        {pages.map(({ href, title }) => (
+        {companyLinks.map(({ href, title }) => (
           <motion.li
             variants={mobileMenuContentVariants}
             key={title}
