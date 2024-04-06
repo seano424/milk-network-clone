@@ -7,7 +7,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/240128_Thamanya_Logo_11_1954fb6e78.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -15,7 +16,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Trita_Logo_01_c71d1eeb49.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -23,7 +25,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Cover_2_copy_79f43981c7.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -31,7 +34,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Thumbnail_copy_70ffc96f9f.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: true,
@@ -39,7 +43,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Core_Fitness_d26e907971.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: true,
@@ -47,7 +52,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9186ab4156.jpg',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -55,7 +61,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9da39e6ecb.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -63,7 +70,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_01_Cover_aaaee6715e.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -71,7 +79,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -79,7 +88,8 @@ const gridItems = [
   {
     title: 'Get started',
     description: 'Start your journey with us today',
-    image: 'https://source.unsplash.com/random',
+    image:
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: true,
