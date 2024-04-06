@@ -4,7 +4,6 @@ import Hero from '@/components/Hero'
 import Intro from '@/components/Intro'
 import { loadingAtom } from '@/atoms'
 import { useAtomValue } from 'jotai'
-import Header from '@/components/Header'
 import NumbersAndFactsGrid from '@/components/NumbersAndFactsGrid'
 import CtaLink from '@/components/CtaLink'
 import WhatWeDo from '@/components/WhatWeDo'
@@ -20,7 +19,6 @@ export default function Home() {
       {/* <Intro /> */}
       {!loading && (
         <>
-          <Header />
           <Hero />
           <NumbersAndFactsGrid />
           <CtaLink

@@ -5,6 +5,7 @@ import './globals.css'
 import Providers from './providers'
 import Cursor from '@/components/Cursor'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
@@ -32,7 +33,10 @@ export default function RootLayout({
       >
         <Cursor />
         <Providers>
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <Header />
+            {children}
+          </main>
           <Footer />
         </Providers>
       </body>

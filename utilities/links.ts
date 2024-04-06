@@ -5,7 +5,7 @@ export const offices = [
 ]
 
 export const companyLinks = [
-  { title: 'Work', href: '/' },
+  { title: 'Work', href: '/work' },
   { title: 'Expertise', href: '/' },
   { title: 'Community', href: '/' },
   { title: 'Discover', href: '/' },

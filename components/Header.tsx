@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { useInView } from 'react-intersection-observer'
 import {
   motion,
@@ -16,11 +17,14 @@ import MobileMenu from './MobileMenu'
 import AnimatedLink from './AnimatedLink'
 import { companyLinks } from '@/utilities/links'
 import { navbarVariants } from '@/utilities/variants'
+import clsx from 'clsx'
+import path from 'path'
 
 export default function Header() {
   const [isTop, setIsTop] = useState(true)
   const { scrollY } = useScroll()
   const [isModalOpen, setModal] = useAtom(modalAtom)
+  const pathname = usePathname()
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     if (latest > 0) {
@@ -71,33 +75,46 @@ export default function Header() {
       {/* Navbar #1 */}
       <nav
         ref={ref}
-        className="absolute z-10 left-1/2 right-0 top-0 p-4 flex justify-end items-center gap-3 xl:justify-between text-xl "
+        className="absolute z-10 grid grid-cols-2 left-0 right-0 top-0 p-4 text-xl "
       >
-        <div className="hidden gap-3 lg:flex xl:gap-8">
-          {companyLinks.slice(0, 4).map(({ href, title }) => (
-            <AnimatedLink
-              key={title}
-              href={href}
-              title={title}
-            />
-          ))}
+        <div>
+          <Link
+            href={'/'}
+            className={clsx(
+              'font-bold text-2xl lg:text-3xl xl:text-4xl tracking-tight',
+              pathname === '/' && 'hidden'
+            )}
+          >
+            milk
+          </Link>
         </div>
-        <AnimatedLink
-          href="/"
-          title="Contact"
-          invert
-          className="hidden lg:block border-b-4 border-black w-max"
-        />
+        <div className="flex justify-end items-center gap-3 xl:justify-between pl-4">
+          <div className="hidden gap-3 lg:flex xl:gap-8">
+            {companyLinks.slice(0, 4).map(({ href, title }) => (
+              <AnimatedLink
+                key={title}
+                href={href}
+                title={title}
+              />
+            ))}
+          </div>
+          <AnimatedLink
+            href="/"
+            title="Contact"
+            invert
+            className="hidden lg:block border-b-2 border-black w-max"
+          />
 
-        <motion.button
-          variants={menuInViewAnimation}
-          initial="hidden"
-          animate={controls}
-          onClick={() => setModal(true)}
-          className="lg:hidden"
-        >
-          Menu
-        </motion.button>
+          <motion.button
+            variants={menuInViewAnimation}
+            initial="hidden"
+            animate={controls}
+            onClick={() => setModal(true)}
+            className="lg:hidden"
+          >
+            Menu
+          </motion.button>
+        </div>
       </nav>
 
       {/* Navbar #2 (enter on scroll) */}
@@ -110,7 +127,7 @@ export default function Header() {
       >
         <Link
           href={'/'}
-          className="font-black text-2xl lg:text-3xl xl:text-4xl tracking-tighter"
+          className="font-bold text-2xl lg:text-3xl xl:text-4xl tracking-tight"
         >
           milk
         </Link>
@@ -121,12 +138,12 @@ export default function Header() {
             <Link href="/">Community</Link>
             <Link href="/">Discover</Link>
           </div>
-          <Link
-            className="hidden lg:block underline underline-offset-4"
+          <AnimatedLink
             href="/"
-          >
-            Contact
-          </Link>
+            title="Contact"
+            invert
+            className="hidden lg:block border-b-2 border-black w-max"
+          />
           <button
             onClick={() => setModal(true)}
             className="lg:hidden"
