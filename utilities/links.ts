@@ -14,35 +14,35 @@ export const companyLinks = [
 
 export const socials = [
   {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/milknetwork/',
+    title: 'Instagram',
+    href: 'https://www.instagram.com/milknetwork/',
   },
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/milknetwork',
+    title: 'Twitter',
+    href: 'https://twitter.com/milknetwork',
   },
   {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/milknetwork/',
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/milknetwork/',
   },
   {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/milknetwork',
+    title: 'Facebook',
+    href: 'https://www.facebook.com/milknetwork',
   },
   {
-    name: 'Behance',
-    url: 'https://twitter.com/milknetwork',
+    title: 'Behance',
+    href: 'https://twitter.com/milknetwork',
   },
   {
-    name: 'Vimeo',
-    url: 'https://www.linkedin.com/company/milknetwork/',
+    title: 'Vimeo',
+    href: 'https://www.linkedin.com/company/milknetwork/',
   },
   {
-    name: 'Medium',
-    url: 'https://www.facebook.com/milknetwork',
+    title: 'Medium',
+    href: 'https://www.facebook.com/milknetwork',
   },
   {
-    name: 'YouTube',
-    url: 'https://www.facebook.com/milknetwork',
+    title: 'YouTube',
+    href: 'https://www.facebook.com/milknetwork',
   },
 ]

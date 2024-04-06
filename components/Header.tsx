@@ -86,7 +86,7 @@ export default function Header() {
           href="/"
           title="Contact"
           invert
-          className="hidden lg:block underline underline-offset-4"
+          className="hidden lg:block border-b-4 border-black w-max"
         />
 
         <motion.button

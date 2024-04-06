@@ -21,7 +21,7 @@ export default function AnimatedLink(props: Props) {
           {title}
           <span
             className={clsx(
-              'absolute left-0 bottom-[1px] filter backdrop-contrast-200 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out',
+              'absolute left-0 -bottom-1 filter backdrop-contrast-200 h-[4px] group-hover:w-full w-0 transition-all duration-500 ease-in-out',
               invert ? 'bg-white' : 'bg-black'
             )}
           ></span>
