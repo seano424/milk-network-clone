@@ -71,7 +71,7 @@ export default function Header() {
   }
 
   return (
-    <>
+    <header>
       {/* Navbar #1 */}
       <nav
         ref={ref}
@@ -157,6 +157,6 @@ export default function Header() {
       </motion.nav>
 
       <MobileMenu />
-    </>
+    </header>
   )
 }
