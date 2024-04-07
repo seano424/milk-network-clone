@@ -68,11 +68,11 @@ export default function Cursor() {
     <motion.div
       style={{ translateX: cursorXSpring, translateY: cursorYSpring }}
       animate={{
-        scale: isHoveringAnimation ? 2.5 : 1,
+        scale: isHoveringAnimation ? 3.5 : 1,
         transition: { duration: 0.2 },
       }}
       className={clsx(
-        'z-50 fixed left-0 top-0 min-w-8 min-h-8 rounded-full pointer-events-none flex items-center justify-center',
+        'z-50 hidden fixed left-0 top-0 min-w-6 min-h-6 rounded-full pointer-events-none xl:flex items-center justify-center',
         isHoveringAnimation
           ? 'bg-black text-white'
           : 'mix-blend-difference bg-white'
