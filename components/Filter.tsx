@@ -40,10 +40,9 @@ export default function Filter(props: FilterProps) {
         onClick={() => setIsFilterOpen((prev) => !prev)}
         className="flex justify-between items-center w-full group text-xl bg-gray-100 rounded-lg p-3 z-20 relative"
       >
+        {/* Three lines on top of each other */}
         <div className="flex items-center">
           <span className="pr-3 flex flex-col gap-1">
-            {/* three lines on top of each other */}
-
             {/* Line 1 */}
             <span className="block w-5 h-[1.5px] bg-black relative">
               {/* dot somewhere on the line */}
@@ -82,7 +81,8 @@ export default function Filter(props: FilterProps) {
           </span>
           {filter}
         </div>
-
+        
+        {/* Plus/Minus SVG */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

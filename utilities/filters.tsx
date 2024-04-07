@@ -1,0 +1,15 @@
+export const workFilters = [
+  'All works',
+  'Campaign',
+  'Communication',
+  'Editorial',
+  'Naming',
+  'Packaging',
+  'Re-branding',
+  'Social Media',
+  'Sonic',
+  'Strategy',
+  'Visual Identity',
+  'Way-finding',
+  'Web Design',
+]

@@ -1,22 +1,5 @@
-'use client'
-
 import Filter from '@/components/Filter'
-
-const filters = [
-  'All works',
-  'Campaign',
-  'Communication',
-  'Editorial',
-  'Naming',
-  'Packaging',
-  'Re-branding',
-  'Social Media',
-  'Sonic',
-  'Strategy',
-  'Visual Identity',
-  'Way-finding',
-  'Web Design',
-]
+import { workFilters } from '@/utilities/filters'
 
 export default function WorkPage() {
   return (
@@ -26,7 +9,7 @@ export default function WorkPage() {
       <div className="flex justify-between">
         <Filter
           type="work"
-          filters={filters}
+          filters={workFilters}
         />
         <button>Grid/List</button>
       </div>
