@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { modalAtom } from '../atoms'
 import { motion } from 'framer-motion'
 import AnimatedLink from './AnimatedLink'
+import { usePathname } from 'next/navigation'
 import { offices, companyLinks } from '@/utilities/links'
 import {
   mobileMenuContentVariants,
@@ -15,6 +16,7 @@ import {
 
 export default function MobileMenu() {
   const [isModalOpen, setModal] = useAtom(modalAtom)
+  const pathname = usePathname()
 
   useEffect(() => {
     if (isModalOpen) {
@@ -23,6 +25,10 @@ export default function MobileMenu() {
       document.body.style.overflow = 'auto'
     }
   }, [isModalOpen])
+
+  useEffect(() => {
+    setModal(false)
+  }, [pathname])
 
   return (
     <motion.nav
