@@ -1,5 +1,6 @@
 import Filter from '@/components/Filter'
 import GridListButton from '@/components/GridListButton'
+import ImageCtaGrid from '@/components/ImageCtaGrid'
 import { workFilters } from '@/utilities/filters'
 
 export default function WorkPage() {
@@ -14,6 +15,8 @@ export default function WorkPage() {
         />
         <GridListButton />
       </div>
+
+      <ImageCtaGrid />
     </div>
   )
 }

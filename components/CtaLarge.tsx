@@ -27,7 +27,7 @@ export default function CtaLarge(props: CtaLargeProps) {
     <Link
       id="link"
       href={link.href}
-      className="p-4 block h-full w-full"
+      className="block h-full w-full"
     >
       <div className="relative min-h-[600px] w-full rounded-lg">
         <Image

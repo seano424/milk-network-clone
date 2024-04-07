@@ -84,7 +84,7 @@ export default function Hero() {
       <div className="absolute w-0.5 h-full bg-gray-100 left-1/2 top-0"></div>
 
       {/* Hero Header */}
-      <div className="h-screen sticky top-0 p-4">
+      <div className="h-screen sticky top-0">
         <h1 className="text-6xl lg:text-9xl tracking-[-0.3rem] lg:font-semibold">
           <AnimatedText
             className="-mb-2 lg:-mb-10"

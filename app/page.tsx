@@ -18,7 +18,7 @@ export default function Home() {
     <main>
       {/* <Intro /> */}
       {!loading && (
-        <>
+        <div className='p-4 flex flex-col gap-4'>
           <Hero />
           <NumbersAndFactsGrid />
           <CtaLink
@@ -37,7 +37,7 @@ export default function Home() {
             title="Works"
           />
           <CtaLarge />
-        </>
+        </div>
       )}
     </main>
   )

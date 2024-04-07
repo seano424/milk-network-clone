@@ -47,7 +47,7 @@ export const Box = (props: BoxProps) => {
 
 export default function NumbersAndFactsGrid() {
   return (
-    <div className="grid grid-cols-4 p-4 gap-2 h-[800px] xl:h-[900px] border-8">
+    <div className="grid grid-cols-4 gap-2 h-[800px] xl:h-[900px]">
       <div className="bg-black h-full w-full rounded-xl col-span-2">
         <h1 className="text-4xl xl:text-6xl tracking-tighter font-medium p-4 text-white flex items-center gap-2">
           <span className="bg-white h-10 w-10 rounded-full" />

@@ -1,6 +1,6 @@
 export default function CtaSpacer() {
   return (
-    <div className="grid grid-cols-2 border-t p-4 my-40">
+    <div className="grid grid-cols-2 border-t my-40">
       <div className="flex items-center gap-3">
         <span className="bg-black h-3 w-3 rounded-full" />
         <p>Portfolio</p>

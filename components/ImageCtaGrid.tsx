@@ -98,7 +98,7 @@ const gridItems = [
 
 export default function ImageCtaGrid() {
   return (
-    <div className="grid grid-cols-4 gap-5 p-4">
+    <div className="grid grid-cols-4 gap-5">
       {gridItems.map((item, index) => (
         <div
           className={clsx(

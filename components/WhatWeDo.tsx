@@ -23,7 +23,7 @@ const items = [
 
 export default function WhatWeDo() {
   return (
-    <div className="p-4">
+    <div>
       <div className="border-t w-full relative top-6 flex items-center gap-2 pt-2">
         <span className="bg-black rounded-full h-3 w-3"></span>
         What we do

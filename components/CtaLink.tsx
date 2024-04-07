@@ -46,7 +46,7 @@ export default function CtaLink(props: CtaLinkProps) {
   }, [])
 
   return (
-    <div className={clsx('grid grid-cols-2 px-4 py-20', className)}>
+    <div className={clsx('grid grid-cols-2 py-20', className)}>
       <div
         className={clsx(
           'flex flex-col gap-2',
