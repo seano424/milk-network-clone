@@ -1,4 +1,5 @@
 import Filter from '@/components/Filter'
+import GridListButton from '@/components/GridListButton'
 import { workFilters } from '@/utilities/filters'
 
 export default function WorkPage() {
@@ -6,12 +7,12 @@ export default function WorkPage() {
     <div className="mt-20 p-4">
       <h1 className="text-6xl xl:text-9xl mb-28">Work</h1>
 
-      <div className="flex justify-between">
+      <div className="flex gap-5 justify-between items-end">
         <Filter
           type="work"
           filters={workFilters}
         />
-        <button>Grid/List</button>
+        <GridListButton />
       </div>
     </div>
   )

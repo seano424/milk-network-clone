@@ -35,7 +35,7 @@ export default function Filter(props: FilterProps) {
     show: { opacity: 1 },
   }
   return (
-    <div className="relative w-10/12 xl:w-1/2">
+    <div className="relative w-full xl:w-1/2">
       <button
         onClick={() => setIsFilterOpen((prev) => !prev)}
         className="flex justify-between items-center w-full group text-xl bg-gray-100 rounded-lg p-3 z-20 relative"
@@ -81,7 +81,7 @@ export default function Filter(props: FilterProps) {
           </span>
           {filter}
         </div>
-        
+
         {/* Plus/Minus SVG */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
