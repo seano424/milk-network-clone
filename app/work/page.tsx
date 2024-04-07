@@ -20,8 +20,8 @@ const filters = [
 
 export default function WorkPage() {
   return (
-    <div className="mt-40 p-4">
-      <h1 className="text-9xl my-10">Work</h1>
+    <div className="mt-20 p-4">
+      <h1 className="text-6xl xl:text-9xl mb-28">Work</h1>
 
       <div className="flex justify-between">
         <Filter

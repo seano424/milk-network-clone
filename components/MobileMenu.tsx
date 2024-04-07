@@ -13,6 +13,7 @@ import {
   mobileMenuLeftToRightVariants,
   mobileMenuVariants,
 } from '@/utilities/variants'
+import Logo from './Logo'
 
 export default function MobileMenu() {
   const [isModalOpen, setModal] = useAtom(modalAtom)
@@ -38,10 +39,8 @@ export default function MobileMenu() {
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       className="fixed lg:hidden bg-white inset-0 z-40 flex flex-col overflow-hidden"
     >
-      <ul className="px-4 pt-4 flex items-center justify-between text-xl">
-        <li className="font-black text-2xl lg:text-3xl xl:text-4xl tracking-tighter">
-          <Link href={'/'}>milk</Link>
-        </li>
+      <ul className="px-4 py-2 flex items-center justify-between text-xl">
+        <Logo />
         <button
           onClick={() => setModal(false)}
           className="lg:hidden"

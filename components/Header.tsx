@@ -18,7 +18,7 @@ import AnimatedLink from './AnimatedLink'
 import { companyLinks } from '@/utilities/links'
 import { navbarVariants } from '@/utilities/variants'
 import clsx from 'clsx'
-import path from 'path'
+import Logo from './Logo'
 
 export default function Header() {
   const [isTop, setIsTop] = useState(true)
@@ -75,13 +75,13 @@ export default function Header() {
       {/* Navbar #1 */}
       <nav
         ref={ref}
-        className="absolute z-10 grid grid-cols-2 left-0 right-0 top-0 p-4 text-xl "
+        className="absolute z-10 grid grid-cols-2 left-0 right-0 top-0 px-4 py-2 text-xl "
       >
         <div>
           <Link
             href={'/'}
             className={clsx(
-              'font-bold text-2xl lg:text-3xl xl:text-4xl tracking-tight',
+              'font-bold text-4xl tracking-tight',
               pathname === '/' && 'hidden'
             )}
           >
@@ -124,16 +124,11 @@ export default function Header() {
         animate={isTop ? 'closed' : 'open'}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         className={clsx(
-          'fixed left-0 right-0 top-0 p-4 flex items-center justify-between text-xl bg-white z-30',
+          'fixed left-0 right-0 top-0 px-4 py-2 flex items-center justify-between text-xl bg-white z-30',
           pathname !== '/' && 'hidden'
         )}
       >
-        <Link
-          href={'/'}
-          className="font-bold text-2xl lg:text-3xl xl:text-4xl tracking-tight"
-        >
-          milk
-        </Link>
+        <Logo />
         <div className="flex justify-end items-center gap-3 xl:justify-between w-1/2 pl-4">
           <div className="hidden gap-3 lg:flex xl:gap-8">
             <Link href="/">Work</Link>

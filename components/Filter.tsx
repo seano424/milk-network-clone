@@ -38,18 +38,18 @@ export default function Filter(props: FilterProps) {
     <div className="relative w-10/12 xl:w-1/2">
       <button
         onClick={() => setIsFilterOpen((prev) => !prev)}
-        className="flex justify-between items-center w-full group text-2xl bg-gray-200 rounded-lg p-3 z-20 relative"
+        className="flex justify-between items-center w-full group text-xl bg-gray-100 rounded-lg p-3 z-20 relative"
       >
         <div className="flex items-center">
           <span className="pr-3 flex flex-col gap-1">
             {/* three lines on top of each other */}
 
             {/* Line 1 */}
-            <span className="block w-6 h-[2px] bg-black relative">
+            <span className="block w-5 h-[1.5px] bg-black relative">
               {/* dot somewhere on the line */}
               <span
                 className={clsx(
-                  'block w-[5px] h-[5px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-[10px]',
+                  'block w-[4px] h-[4px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-[10px]',
                   'group-hover:translate-x-1',
                   'transition-all duration-500 ease-in-out'
                 )}
@@ -57,11 +57,11 @@ export default function Filter(props: FilterProps) {
             </span>
 
             {/* Line 2 */}
-            <span className="block w-6 h-[2px] bg-black relative">
+            <span className="block w-5 h-[1.5px] bg-black relative">
               {/* dot somewhere on the line */}
               <span
                 className={clsx(
-                  'block w-[5px] h-[5px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-1',
+                  'block w-[4px] h-[4px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-1',
                   'group-hover:translate-x-[10px]',
                   'transition-all duration-500 ease-in-out'
                 )}
@@ -69,11 +69,11 @@ export default function Filter(props: FilterProps) {
             </span>
 
             {/* Line 3 */}
-            <span className="block w-6 h-[2px] bg-black relative">
+            <span className="block w-5 h-[1.5px] bg-black relative">
               {/* dot somewhere on the line */}
               <span
                 className={clsx(
-                  'block w-[5px] h-[5px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-3',
+                  'block w-[4px] h-[4px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-3',
                   'group-hover:translate-x-1',
                   'transition-all duration-500 ease-in-out'
                 )}
@@ -90,7 +90,7 @@ export default function Filter(props: FilterProps) {
           strokeWidth={1.5}
           stroke="currentColor"
           className={clsx(
-            'w-8 h-8',
+            'w-6 h-6',
             'transform transition-all duration-700 ease-in-out',
             !isFilterOpen && 'group-hover:rotate-180'
           )}
@@ -112,7 +112,7 @@ export default function Filter(props: FilterProps) {
             variants={container}
             initial="hidden"
             animate="show"
-            className="absolute top-0 left-0 w-full bg-gray-200 rounded-lg z-10 text-xl"
+            className="absolute top-0 left-0 w-full bg-gray-100 rounded-lg z-10 text-xl"
           >
             <div className="grid grid-cols-3 gap-3 pt-20 p-3">
               {filters.map((f) => (
@@ -134,7 +134,7 @@ export default function Filter(props: FilterProps) {
                     <span
                       className={clsx(
                         'absolute left-0 -bottom-[5px] h-[3px] group-hover:w-full w-0 transition-all duration-500 ease-in-out z-10',
-                        filter === f ? 'bg-gray-200' : 'bg-black'
+                        filter === f ? 'bg-gray-100' : 'bg-black'
                       )}
                     ></span>
                   </span>
