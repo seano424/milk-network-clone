@@ -9,6 +9,17 @@ interface Props {
   email?: string
 }
 
+export const Span = ({ invert }: { invert?: boolean }) => {
+  return (
+    <span
+      className={clsx(
+        'absolute left-0 -bottom-[2px] filter backdrop-contrast-200 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out ',
+        invert ? 'bg-white' : 'bg-black'
+      )}
+    ></span>
+  )
+}
+
 export default function AnimatedLink(props: Props) {
   const { title, href, className, invert, email } = props
   return (
@@ -19,40 +30,25 @@ export default function AnimatedLink(props: Props) {
           href={href}
         >
           {title}
-          <span
-            className={clsx(
-              'absolute left-0 -bottom-1 filter backdrop-contrast-200 h-[4px] group-hover:w-full w-0 transition-all duration-500 ease-in-out',
-              invert ? 'bg-white' : 'bg-black'
-            )}
-          ></span>
+          <Span invert={invert} />
         </Link>
       )}
 
-      {email && (
+      {!href && email && (
         <a
           className={clsx(className, 'relative group')}
           href={`mailto:${email}`}
           target="_blank"
         >
           {email}
-          <span
-            className={clsx(
-              'absolute left-0 -bottom-1 filter backdrop-contrast-200 h-[4px] group-hover:w-full w-0 transition-all duration-500 ease-in-out ',
-              invert ? 'bg-white' : 'bg-black'
-            )}
-          ></span>
+          <Span invert={invert} />
         </a>
       )}
 
       {!href && !email && (
         <span className={clsx(className, 'relative group')}>
           {title}
-          <span
-            className={clsx(
-              'absolute left-0 bottom-[1px] filter backdrop-contrast-200 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out',
-              invert ? 'bg-white' : 'bg-black'
-            )}
-          ></span>
+          <Span invert={invert} />
         </span>
       )}
     </>
