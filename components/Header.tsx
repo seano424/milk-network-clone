@@ -46,7 +46,7 @@ export default function Header() {
   const controls = useAnimation()
 
   const { ref, inView } = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.5,
   })
 
