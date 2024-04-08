@@ -81,7 +81,7 @@ export default function Hero() {
       className="relative h-[300vh]"
     >
       {/* divider line */}
-      <div className="absolute w-0.5 h-full bg-gray-100 left-1/2 top-0"></div>
+      <div className="absolute w-0.5 h-full bg-gray-100 dark:bg-black left-1/2 top-0"></div>
 
       {/* Hero Header */}
       <div className="h-screen sticky top-0">
@@ -123,7 +123,7 @@ export default function Hero() {
             >
               <motion.input
                 variants={typedAnimationVariants}
-                className="text-black dark:text-white bg-white/0 placeholder:text-black dark:text-white w-full"
+                className="text-black dark:text-white bg-white/0 placeholder:text-black w-full"
                 type="text"
               />
             </ReactTyped>

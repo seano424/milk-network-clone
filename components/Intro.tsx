@@ -86,7 +86,7 @@ export default function Intro() {
         variants={viewVariants}
         initial="show"
         animate={controls}
-        className="w-full bg-white fixed bottom-0 flex items-end left-1 z-50"
+        className="w-full bg-white fixed bottom-0 flex items-end left-1 z-50 dark:bg-black"
       >
         <motion.h1
           animate={controls}

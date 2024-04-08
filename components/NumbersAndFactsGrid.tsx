@@ -15,8 +15,8 @@ export const Box = (props: BoxProps) => {
       href={'/'}
       className={clsx(
         'h-full w-full rounded-xl flex flex-col justify-between',
-        'py-4 bg-gray-100 text-black dark:text-white relative',
-        'group hover:bg-yellow-300 transition-all duration-300 ease-in-out',
+        'py-4 bg-gray-100 dark:bg-gray-950 text-black dark:text-white relative',
+        'group hover:bg-yellow-300 dark:hover:bg-sky-950 transition-all duration-300 ease-in-out',
         oneColumn && 'col-span-2'
       )}
     >
@@ -30,7 +30,7 @@ export const Box = (props: BoxProps) => {
           strokeWidth={1.5}
           stroke="currentColor"
           className={clsx(
-            'w-8 h-8 xl:w-12 xl:h-12 bg-black text-gray-100 rounded-full',
+            'w-8 h-8 xl:w-12 xl:h-12 bg-black dark:bg-gray-950 text-gray-100 rounded-full',
             'transform group-hover:rotate-180 transition-all duration-700 ease-in-out'
           )}
         >
@@ -48,7 +48,7 @@ export const Box = (props: BoxProps) => {
 export default function NumbersAndFactsGrid() {
   return (
     <div className="grid grid-cols-4 gap-2 h-[800px] xl:h-[900px]">
-      <div className="bg-black h-full w-full rounded-xl col-span-2">
+      <div className="bg-black dark:bg-gray-950 h-full w-full rounded-xl col-span-2">
         <h1 className="text-4xl xl:text-6xl tracking-tighter font-medium p-4 text-white flex items-center gap-2">
           <span className="bg-white h-10 w-10 rounded-full" />
           Numbers and Facts

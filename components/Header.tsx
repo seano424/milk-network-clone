@@ -118,7 +118,7 @@ export default function Header() {
             animate={isTop ? 'closed' : 'open'}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className={clsx(
-              'fixed left-0 right-0 top-0 px-4 py-2 flex items-center justify-between text-xl bg-white z-30',
+              'fixed left-0 right-0 top-0 px-4 py-2 flex items-center justify-between text-xl bg-white dark:bg-black z-30',
               pathname !== '/' && 'hidden'
             )}
           >
