@@ -31,7 +31,7 @@ export default function ImageCtaList() {
           transition: { duration: 1.5, ease: 'easeInOut' },
         }}
       >
-        <div className="grid grid-cols-4 text-gray-100">
+        <div className="grid grid-cols-4 text-gray-300 text-lg dark:text-gray-100 font-medium">
           <div className={clsx('p-4')}>Project</div>
           <div className="p-4">Services</div>
           <div className="p-4">Year</div>
@@ -43,26 +43,22 @@ export default function ImageCtaList() {
             href={item.href}
             key={item.title}
           >
-            <div className="grid grid-cols-4">
+            <div
+              className={clsx(
+                'grid grid-cols-4 border-y',
+                sortItemsByDate.length - 1 === i && 'border-none'
+              )}
+            >
               <div
                 className={clsx(
-                  'border-y p-4',
+                  'p-4',
                   i === 0 && 'rounded-tl',
                   i === filteredItems.length - 1 && 'rounded-bl'
                 )}
               >
                 {item.title}
               </div>
-              <div className="border-y p-4">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  height={200}
-                  width={200}
-                  className="object-cover object-center bg-purple-100"
-                />
-              </div>
-              <div className="border-y p-4">
+              <div className="p-4">
                 {item.categories.map((cat) => (
                   <p
                     className="flex"
@@ -73,16 +69,16 @@ export default function ImageCtaList() {
                       item.categories.length - 1 && ', '}
                   </p>
                 ))}
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  height={200}
+                  width={200}
+                  className="object-cover object-center bg-purple-100 mt-4"
+                />
               </div>
-              <div
-                className={clsx(
-                  'border-y p-4',
-                  i === 0 && 'rounded-tr',
-                  i === filteredItems.length - 1 && 'rounded-br'
-                )}
-              >
-                {item.year}
-              </div>
+              <div className="p-4">({item.year})</div>
+              <div className={clsx('p-4')}>({item.client})</div>
             </div>
           </Link>
         ))}

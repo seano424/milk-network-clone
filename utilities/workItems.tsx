@@ -7,6 +7,7 @@ export const workItems: {
   year: number
   href: string
   spansTwoColumns: boolean
+  client: string
 }[] = [
   {
     title: 'Get started',
@@ -16,6 +17,7 @@ export const workItems: {
     year: 2021,
     href: '/',
     spansTwoColumns: false,
+    client: 'SaudiaMilk',
   },
   {
     title: 'Get started',
@@ -25,6 +27,7 @@ export const workItems: {
     year: 2024,
     href: '/',
     spansTwoColumns: false,
+    client: 'Nana',
   },
   {
     title: 'Get started',
@@ -34,6 +37,7 @@ export const workItems: {
     year: 2024,
     href: '/',
     spansTwoColumns: false,
+    client: 'Tawuniya',
   },
   {
     title: 'Get started',
@@ -43,6 +47,7 @@ export const workItems: {
     year: 2024,
     href: '/',
     spansTwoColumns: true,
+    client: 'Nana',
   },
   {
     title: 'Get started',
@@ -52,6 +57,7 @@ export const workItems: {
     year: 2023,
     href: '/',
     spansTwoColumns: true,
+    client: 'Nana',
   },
   {
     title: 'Get started',
@@ -61,6 +67,7 @@ export const workItems: {
     year: 2023,
     href: '/',
     spansTwoColumns: false,
+    client: 'Saudia Milk',
   },
   {
     title: 'Get started',
@@ -70,6 +77,7 @@ export const workItems: {
     year: 2023,
     href: '/',
     spansTwoColumns: false,
+    client: 'Nana',
   },
   {
     title: 'Get started',
@@ -79,6 +87,7 @@ export const workItems: {
     year: 2022,
     href: '/',
     spansTwoColumns: false,
+    client: 'Cultural Talents Tournament',
   },
   {
     title: 'Get started',
@@ -88,6 +97,7 @@ export const workItems: {
     year: 2022,
     href: '/',
     spansTwoColumns: false,
+    client: 'Click Click',
   },
   {
     title: 'Get started',
@@ -97,5 +107,6 @@ export const workItems: {
     year: 2021,
     href: '/',
     spansTwoColumns: true,
+    client: 'Saudia Milk',
   },
 ]
