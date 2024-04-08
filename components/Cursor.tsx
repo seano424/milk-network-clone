@@ -1,14 +1,17 @@
 'use client'
+
+import clsx from 'clsx'
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import {
   motion,
   useMotionValue,
   useSpring,
   AnimatePresence,
 } from 'framer-motion'
-import clsx from 'clsx'
 
 export default function Cursor() {
+  const pathname = usePathname()
   const [isHoveringAnimation, setIsHoveringAnimation] = useState(false)
   const [typeOfElement, setTypeOfElement] = useState<'video' | 'link' | ''>('')
   const cursorX = useMotionValue(-100)
@@ -62,7 +65,7 @@ export default function Cursor() {
       window.removeEventListener('mouseover', handleHoverVideo)
       window.removeEventListener('mouseover', handleHoverLink)
     }
-  }, [cursorX, cursorY, typeOfElement, isHoveringAnimation])
+  }, [cursorX, cursorY, typeOfElement, isHoveringAnimation, pathname])
 
   return (
     <motion.div

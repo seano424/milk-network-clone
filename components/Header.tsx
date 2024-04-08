@@ -46,7 +46,7 @@ export default function Header() {
   const controls = useAnimation()
 
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.5,
   })
 
@@ -57,7 +57,7 @@ export default function Header() {
     if (!inView) {
       controls.start('hidden')
     }
-  }, [controls, inView])
+  }, [controls, inView, pathname])
 
   const menuInViewAnimation = {
     hidden: { translateY: -200 },
