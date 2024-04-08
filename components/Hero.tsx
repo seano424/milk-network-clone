@@ -123,7 +123,7 @@ export default function Hero() {
             >
               <motion.input
                 variants={typedAnimationVariants}
-                className="text-black dark:text-white bg-white/0 placeholder:text-black w-full"
+                className="text-black dark:text-white bg-white/0 placeholder:text-black dark:placeholder:text-white w-full"
                 type="text"
               />
             </ReactTyped>

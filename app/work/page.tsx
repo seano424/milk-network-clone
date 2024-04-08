@@ -22,17 +22,18 @@ export default function WorkPage() {
         className="mt-20 p-4 flex flex-col gap-8"
       >
         <h1 className="text-6xl xl:text-9xl mb-20">Work</h1>
-        <GridList />
-
-        <CtaLarge
-          image="https://strapi-cms-3mz0.onrender.com/uploads/Jeddah_Office_1_70052261e5.webp"
-          fullWidth={false}
-          dot={false}
-          heading="Let's work"
-          headingLine2=""
-          headingLine3=""
-          rightHeading="Be the change you want to see - act now!"
-        />
+        <div className='grid gap-40'>
+          <GridList />
+          <CtaLarge
+            image="https://strapi-cms-3mz0.onrender.com/uploads/Jeddah_Office_1_70052261e5.webp"
+            fullWidth={false}
+            dot={false}
+            heading="Let's work"
+            headingLine2=""
+            headingLine3=""
+            rightHeading="Be the change you want to see - act now!"
+          />
+        </div>
       </motion.div>
     </AnimatePresence>
   )
