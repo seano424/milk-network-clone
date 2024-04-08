@@ -6,6 +6,7 @@ import Filter from '@/components/Filter'
 import { workFilters } from '@/utilities/filters'
 import ImageCtaGrid from '@/components/ImageCtaGrid'
 import GridListButton from '@/components/GridListButton'
+import ImageCtaList from './ImageCtaList'
 
 export default function GridList() {
   const gridList = useAtomValue(gridListAtom)
@@ -22,6 +23,7 @@ export default function GridList() {
       </div>
 
       {isGrid && <ImageCtaGrid />}
+      {!isGrid && <ImageCtaList />}
     </div>
   )
 }

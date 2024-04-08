@@ -1,6 +1,6 @@
 import { Work } from './filters'
 
-export const gridItems: {
+export const workItems: {
   title: string
   categories: Array<Work>
   image: string
@@ -12,7 +12,7 @@ export const gridItems: {
     title: 'Get started',
     categories: ['Campaign', 'Communication'],
     image:
-      'https://strapi-cms-3mz0.onrender.com/uploads/240128_Thamanya_Logo_11_1954fb6e78.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Saudia_Milk_82c9240877.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -21,7 +21,7 @@ export const gridItems: {
     title: 'Get started',
     categories: ['Visual Identity', 'Way-finding'],
     image:
-      'https://strapi-cms-3mz0.onrender.com/uploads/small_Trita_Logo_01_c71d1eeb49.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_11_58924254bc.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: false,
@@ -39,7 +39,7 @@ export const gridItems: {
     title: 'Get started',
     categories: ['Social Media', 'Campaign'],
     image:
-      'https://strapi-cms-3mz0.onrender.com/uploads/small_Thumbnail_copy_70ffc96f9f.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_10_b0f4fb753a.webp',
     year: '2021',
     href: '/',
     spansTwoColumns: true,

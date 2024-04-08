@@ -7,15 +7,15 @@ import { filterAtom } from '@/atoms'
 import { useAtomValue } from 'jotai'
 import AnimatedLink from './AnimatedLink'
 import { Work } from '@/utilities/filters'
-import { gridItems } from '@/utilities/gridItems'
+import { workItems } from '@/utilities/workItems'
 import { AnimatePresence, motion } from 'framer-motion'
 
 export default function ImageCtaGrid() {
   const filterState = useAtomValue(filterAtom)
 
-  const filteredItems = gridItems.filter((gridItem) => {
-    if (filterState.filter === '') return gridItem
-    return gridItem.categories.includes(filterState.filter as Work)
+  const filteredItems = workItems.filter((item) => {
+    if (filterState.filter === '') return item
+    return item.categories.includes(filterState.filter as Work)
   })
 
   return (
