@@ -15,7 +15,7 @@ export const Box = (props: BoxProps) => {
       href={'/'}
       className={clsx(
         'h-full w-full rounded-xl flex flex-col justify-between',
-        'py-4 bg-gray-100 text-black relative',
+        'py-4 bg-gray-100 text-black dark:text-white relative',
         'group hover:bg-yellow-300 transition-all duration-300 ease-in-out',
         oneColumn && 'col-span-2'
       )}

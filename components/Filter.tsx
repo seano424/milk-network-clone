@@ -32,7 +32,7 @@ export const FilterButton = ({
       }}
       className={clsx(
         'text-left w-max',
-        filterState.filter === f && 'border-b-2 border-black'
+        filterState.filter === f && 'border-b-2 border-black dark:border-white'
       )}
     >
       <span className="relative group">
@@ -40,9 +40,11 @@ export const FilterButton = ({
         <span
           className={clsx(
             'absolute left-0  filter backdrop-contrast-200 group-hover:w-full w-0 transition-all duration-500 ease-in-out z-10',
-            filterState.filter === f
-              ? 'bg-gray-100 h-[5px] -bottom-[5px]'
-              : 'bg-black h-[2px] -bottom-[4px]'
+            f.length
+              ? filterState.filter === f
+                ? 'bg-gray-100 h-[5px] -bottom-[5px]'
+                : 'bg-gray-950 dark:bg-white h-[2px] -bottom-[4px]'
+              : 'bg-gray-950 h-[5px] -bottom-[5px]'
           )}
         ></span>
       </span>
@@ -77,17 +79,17 @@ export default function Filter(props: FilterProps) {
             isOpen: !filterState.isOpen,
           })
         }
-        className="flex justify-between items-center w-full group text-xl bg-gray-100 rounded-lg p-3 z-20 relative"
+        className="flex justify-between items-center w-full group text-xl bg-gray-100 dark:bg-gray-950 rounded-lg p-3 z-20 relative"
       >
         {/* Three lines on top of each other */}
         <div className="flex items-center">
           <span className="pr-3 flex flex-col gap-1">
             {/* Line 1 */}
-            <span className="block w-5 h-[1.5px] bg-black relative">
+            <span className="block w-5 h-[1.5px] bg-gray-950 dark:bg-white relative">
               {/* dot somewhere on the line */}
               <span
                 className={clsx(
-                  'block w-[4px] h-[4px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-[10px]',
+                  'block w-[4px] h-[4px] bg-gray-950 dark:bg-gray-200 absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-[10px]',
                   'group-hover:translate-x-1',
                   'transition-all duration-500 ease-in-out'
                 )}
@@ -95,11 +97,11 @@ export default function Filter(props: FilterProps) {
             </span>
 
             {/* Line 2 */}
-            <span className="block w-5 h-[1.5px] bg-black relative">
+            <span className="block w-5 h-[1.5px] bg-gray-950 dark:bg-white relative">
               {/* dot somewhere on the line */}
               <span
                 className={clsx(
-                  'block w-[4px] h-[4px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-1',
+                  'block w-[4px] h-[4px] bg-gray-950 dark:bg-gray-200 absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-1',
                   'group-hover:translate-x-[10px]',
                   'transition-all duration-500 ease-in-out'
                 )}
@@ -107,11 +109,11 @@ export default function Filter(props: FilterProps) {
             </span>
 
             {/* Line 3 */}
-            <span className="block w-5 h-[1.5px] bg-black relative">
+            <span className="block w-5 h-[1.5px] bg-gray-950 dark:bg-white relative">
               {/* dot somewhere on the line */}
               <span
                 className={clsx(
-                  'block w-[4px] h-[4px] bg-black absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-3',
+                  'block w-[4px] h-[4px] bg-gray-950 dark:bg-gray-200 absolute top-1/2 transform -translate-y-1/2 rounded-full translate-x-3',
                   'group-hover:translate-x-1',
                   'transition-all duration-500 ease-in-out'
                 )}
@@ -152,7 +154,7 @@ export default function Filter(props: FilterProps) {
             variants={container}
             initial="hidden"
             animate="show"
-            className="absolute top-0 left-0 w-full bg-gray-100 rounded-lg z-10 text-xl"
+            className="absolute top-0 left-0 w-full dark:bg-gray-950 bg-gray-100 rounded-lg z-10 text-xl"
           >
             <div className="grid grid-cols-3 gap-3 pt-20 p-3">
               <FilterButton

@@ -39,11 +39,11 @@ export default function CtaLarge(props: CtaLargeProps) {
         />
         <div className="absolute inset-0 flex flex-col justify-between p-4">
           <div className="max-w-[23rem] lg:max-w-[50rem]">
-            <h2 className="text-black flex items-center gap-2 text-3xl xl:text-5xl before:h-7 before:w-7 before:rounded-full before:bg-black before:flex-shrink-0">
+            <h2 className="text-black dark:text-white flex items-center gap-2 text-3xl xl:text-5xl before:h-7 before:w-7 before:rounded-full before:bg-black before:flex-shrink-0">
               {heading}
             </h2>
-            <h2 className="text-black text-3xl xl:text-5xl">{headingLine2}</h2>
-            <h2 className="text-black text-3xl xl:text-5xl">{headingLine3}</h2>
+            <h2 className="text-black dark:text-white text-3xl xl:text-5xl">{headingLine2}</h2>
+            <h2 className="text-black dark:text-white text-3xl xl:text-5xl">{headingLine3}</h2>
           </div>
 
           <CtaLink

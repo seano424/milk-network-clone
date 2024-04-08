@@ -27,7 +27,7 @@ export default function Footer() {
             >
               milk
             </Link>
-            <div className="max-w-64 pt-5 text-2xl leading-tight tracking-tight text-gray-900">
+            <div className="max-w-64 pt-5 text-2xl leading-tight tracking-tight text-gray-900 dark:text-gray-200">
               <p>Milk Network TM</p>
               <p>
                 is a brand development firm that works in thought and in action:

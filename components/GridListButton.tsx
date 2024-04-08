@@ -12,14 +12,14 @@ export default function GridListButton() {
     <div className="flex items-center gap-2 text-xl">
       <button
         onClick={() => setIsGridOrList('grid')}
-        className={clsx(isList ? 'text-gray-300' : 'text-black')}
+        className={clsx(isList ? 'text-gray-300' : 'text-black dark:text-white')}
       >
         Grid
       </button>
       <span>/</span>
       <button
         onClick={() => setIsGridOrList('list')}
-        className={clsx(isList ? 'text-black' : 'text-gray-300')}
+        className={clsx(isList ? 'text-black dark:text-white' : 'text-gray-300')}
       >
         List
       </button>

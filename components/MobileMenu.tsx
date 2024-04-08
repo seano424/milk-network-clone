@@ -37,7 +37,7 @@ export default function MobileMenu() {
       initial="closed"
       animate={isModalOpen ? 'open' : 'closed'}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      className="fixed lg:hidden bg-white inset-0 z-40 flex flex-col overflow-hidden"
+      className="fixed lg:hidden bg-white dark:bg-black inset-0 z-40 flex flex-col overflow-hidden"
     >
       <ul className="px-4 py-2 flex items-center justify-between text-xl">
         <Logo />
