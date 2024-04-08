@@ -16,9 +16,10 @@ export default function Intro() {
 
   useEffect(() => {
     // setLoading(true)
-    if (pathname === '/') {
+    if (loading) {
       document.body.style.overflow = 'hidden'
     }
+    
     const timeout = setTimeout(() => {
       controls.start('shrink')
       controls.start('hidden')
