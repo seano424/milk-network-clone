@@ -12,6 +12,9 @@ interface CtaLargeProps {
     href: string
   }
   image?: string
+  fullWidth?: boolean
+  dot?: boolean
+  rightHeading?: string
 }
 
 export default function CtaLarge(props: CtaLargeProps) {
@@ -22,6 +25,9 @@ export default function CtaLarge(props: CtaLargeProps) {
     headingLine3 = 'change the world',
     link = { label: 'Contact us', href: '/' },
     image = 'https://strapi-cms-3mz0.onrender.com/uploads/img37_c440f34451.jpg',
+    fullWidth = true,
+    dot = true,
+    rightHeading,
   } = props
   return (
     <Link
@@ -37,18 +43,37 @@ export default function CtaLarge(props: CtaLargeProps) {
           alt={title}
           className="object-cover object-center rounded-lg"
         />
+        {/* overlay with bg gradient to top */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/30" />
+
         <div className="absolute inset-0 flex flex-col justify-between p-4">
-          <div className="max-w-[23rem] lg:max-w-[50rem]">
-            <h2 className="text-black dark:text-white flex items-center gap-2 text-3xl xl:text-5xl before:h-7 before:w-7 before:rounded-full before:bg-black before:flex-shrink-0">
-              {heading}
-            </h2>
-            <h2 className="text-black dark:text-white text-3xl xl:text-5xl">{headingLine2}</h2>
-            <h2 className="text-black dark:text-white text-3xl xl:text-5xl">{headingLine3}</h2>
+          <div className="flex justify-between">
+            <div className="max-w-[23rem] lg:max-w-[50rem]">
+              <div className="flex gap-1">
+                {dot && (
+                  <div className="h-7 w-7 rounded-full bg-black flex-shrink-0" />
+                )}
+                <h2 className="text-black dark:text-white flex items-center gap-2 text-2xl xl:text-4xl">
+                  {heading}
+                </h2>
+              </div>
+              <h2 className="text-black dark:text-white text-2xl xl:text-4xl">
+                {headingLine2}
+              </h2>
+              <h2 className="text-black dark:text-white text-2xl xl:text-4xl">
+                {headingLine3}
+              </h2>
+            </div>
+            {rightHeading && (
+              <h2 className="text-black dark:text-white text-2xl xl:text-4xl max-w-[23rem]">
+                {rightHeading}
+              </h2>
+            )}
           </div>
 
           <CtaLink
             time
-            fullWidth
+            fullWidth={fullWidth}
             decorative
             link={link}
             title={title}
