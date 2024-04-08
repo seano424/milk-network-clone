@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation'
 import { useAtom, useAtomValue } from 'jotai'
 import { modalAtom, loadingAtom } from '../atoms'
 import { companyLinks } from '@/utilities/links'
-import { navbarVariants } from '@/utilities/variants'
 import { useInView } from 'react-intersection-observer'
+import { navbarVariants, menuInViewAnimation } from '@/utilities/variants'
 import {
   motion,
   useScroll,
@@ -58,18 +58,6 @@ export default function Header() {
       controls.start('hidden')
     }
   }, [controls, inView, pathname])
-
-  const menuInViewAnimation = {
-    hidden: { translateY: -200 },
-    visible: {
-      translateY: 0,
-      transition: {
-        duration: 1,
-        ease: [0.2, 0.65, 0.3, 0.9],
-        delay: 0.5,
-      },
-    },
-  }
 
   return (
     <>
