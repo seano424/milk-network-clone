@@ -3,7 +3,7 @@ import { atom } from 'jotai'
 // import { gridItems } from '@/utilities/gridItems'
 
 export const modalAtom = atom(false)
-export const loadingAtom = atom(false)
+export const loadingAtom = atom(true)
 export const isTopAtom = atom(true)
 
 export const filterAtom = atom({ type: '', filter: '', isOpen: false })

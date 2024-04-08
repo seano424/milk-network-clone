@@ -1,18 +1,23 @@
 'use client'
 
 import { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
 import AnimatedText from './AnimatedText'
 import { loadingAtom, isTopAtom } from '@/atoms'
 import { useSetAtom, useAtomValue } from 'jotai'
+import { motion, useAnimation } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
 export default function Intro() {
   const controls = useAnimation()
+  const pathname = usePathname()
   const setLoading = useSetAtom(loadingAtom)
   const isTop = useAtomValue(isTopAtom)
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden'
+    setLoading(true)
+    if (pathname === '/') {
+      document.body.style.overflow = 'hidden'
+    }
     const timeout = setTimeout(() => {
       controls.start('shrink')
       controls.start('hidden')

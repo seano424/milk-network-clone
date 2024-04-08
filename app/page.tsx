@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* <Intro /> */}
+      <Intro />
       {!loading && (
         <div className='p-4 flex flex-col gap-4'>
           <Hero />
