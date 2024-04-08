@@ -18,10 +18,12 @@ export default function ImageCtaGrid() {
     return item.categories.includes(filterState.filter as Work)
   })
 
+  const sortItemsByDate = filteredItems.sort((a, b) => b.year - a.year)
+
   return (
     <AnimatePresence>
       <div className="grid grid-cols-4 gap-x-3 gap-y-7 min-h-80">
-        {filteredItems.map((item, index) => (
+        {sortItemsByDate.map((item, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0 }}

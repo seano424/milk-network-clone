@@ -4,7 +4,7 @@ export const workItems: {
   title: string
   categories: Array<Work>
   image: string
-  year: string
+  year: number
   href: string
   spansTwoColumns: boolean
 }[] = [
@@ -13,7 +13,7 @@ export const workItems: {
     categories: ['Campaign', 'Communication'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_Saudia_Milk_82c9240877.webp',
-    year: '2021',
+    year: 2021,
     href: '/',
     spansTwoColumns: false,
   },
@@ -22,7 +22,7 @@ export const workItems: {
     categories: ['Visual Identity', 'Way-finding'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_11_58924254bc.webp',
-    year: '2021',
+    year: 2024,
     href: '/',
     spansTwoColumns: false,
   },
@@ -31,7 +31,7 @@ export const workItems: {
     categories: ['Visual Identity', 'Packaging'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_Cover_2_copy_79f43981c7.webp',
-    year: '2021',
+    year: 2024,
     href: '/',
     spansTwoColumns: false,
   },
@@ -40,7 +40,7 @@ export const workItems: {
     categories: ['Social Media', 'Campaign'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_10_b0f4fb753a.webp',
-    year: '2021',
+    year: 2024,
     href: '/',
     spansTwoColumns: true,
   },
@@ -49,7 +49,7 @@ export const workItems: {
     categories: ['Visual Identity'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_Core_Fitness_d26e907971.webp',
-    year: '2021',
+    year: 2023,
     href: '/',
     spansTwoColumns: true,
   },
@@ -58,7 +58,7 @@ export const workItems: {
     categories: ['Visual Identity'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9186ab4156.jpg',
-    year: '2021',
+    year: 2023,
     href: '/',
     spansTwoColumns: false,
   },
@@ -67,7 +67,7 @@ export const workItems: {
     categories: ['Visual Identity'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9da39e6ecb.webp',
-    year: '2021',
+    year: 2023,
     href: '/',
     spansTwoColumns: false,
   },
@@ -76,7 +76,7 @@ export const workItems: {
     categories: ['Visual Identity'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_01_Cover_aaaee6715e.webp',
-    year: '2021',
+    year: 2022,
     href: '/',
     spansTwoColumns: false,
   },
@@ -85,7 +85,7 @@ export const workItems: {
     categories: ['Visual Identity', 'Re-branding'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
-    year: '2021',
+    year: 2022,
     href: '/',
     spansTwoColumns: false,
   },
@@ -94,7 +94,7 @@ export const workItems: {
     categories: ['Visual Identity', 'Sonic'],
     image:
       'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
-    year: '2021',
+    year: 2021,
     href: '/',
     spansTwoColumns: true,
   },
