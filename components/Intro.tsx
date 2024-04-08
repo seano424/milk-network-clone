@@ -11,10 +11,11 @@ export default function Intro() {
   const controls = useAnimation()
   const pathname = usePathname()
   const setLoading = useSetAtom(loadingAtom)
+  const loading = useAtomValue(loadingAtom)
   const isTop = useAtomValue(isTopAtom)
 
   useEffect(() => {
-    setLoading(true)
+    // setLoading(true)
     if (pathname === '/') {
       document.body.style.overflow = 'hidden'
     }
@@ -38,7 +39,7 @@ export default function Intro() {
     grow: {
       originX: 0,
       originY: 1,
-      scale: 1,
+      scale: loading ? 1 : 0.125,
       transition: {
         duration: 1,
         ease: [0.2, 0.65, 0.3, 0.9],
