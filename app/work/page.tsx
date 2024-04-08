@@ -5,8 +5,8 @@ import { workFilters } from '@/utilities/filters'
 
 export default function WorkPage() {
   return (
-    <div className="mt-20 p-4">
-      <h1 className="text-6xl xl:text-9xl mb-28">Work</h1>
+    <div className="mt-20 p-4 flex flex-col gap-8">
+      <h1 className="text-6xl xl:text-9xl mb-20">Work</h1>
 
       <div className="flex gap-5 justify-between items-end">
         <Filter
