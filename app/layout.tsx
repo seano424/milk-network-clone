@@ -28,7 +28,7 @@ export default function RootLayout({
         className={clsx(
           dmSans.className,
           devMode && 'debug-screens',
-          'bg-white flex flex-col min-h-screen'
+          'bg-white dark:bg-black dark:text-white flex flex-col min-h-screen'
         )}
       >
         <Cursor />

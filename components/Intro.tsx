@@ -15,11 +15,10 @@ export default function Intro() {
   const isTop = useAtomValue(isTopAtom)
 
   useEffect(() => {
-    // setLoading(true)
     if (loading) {
       document.body.style.overflow = 'hidden'
     }
-    
+
     const timeout = setTimeout(() => {
       controls.start('shrink')
       controls.start('hidden')
