@@ -131,7 +131,8 @@ export default function Filter(props: FilterProps) {
           className={clsx(
             'w-6 h-6',
             'transform transition-all duration-700 ease-in-out',
-            !filterState.isOpen && 'group-hover:rotate-180'
+            !filterState.isOpen && 'group-hover:rotate-180',
+            filterState.isOpen && 'rotate-180'
           )}
         >
           <path
