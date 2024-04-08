@@ -13,7 +13,7 @@ export const Span = ({ invert }: { invert?: boolean }) => {
   return (
     <span
       className={clsx(
-        'absolute left-0 -bottom-[2px] filter backdrop-contrast-200 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out ',
+        'absolute left-0 -bottom-[2px] filter backdrop-contrast-200 h-[2px] group-hover:w-full w-0 transition-all duration-500 ease-in-out z-10',
         invert ? 'bg-white' : 'bg-black'
       )}
     ></span>
