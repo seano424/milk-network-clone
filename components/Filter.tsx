@@ -44,7 +44,7 @@ export const FilterButton = ({
               ? filterState.filter === f
                 ? 'bg-gray-100 h-[5px] -bottom-[5px]'
                 : 'bg-gray-950 dark:bg-white h-[2px] -bottom-[4px]'
-              : 'bg-gray-950 h-[5px] -bottom-[5px]'
+              : 'bg-gray-100 dark:bg-gray-950 h-[5px] -bottom-[5px]'
           )}
         ></span>
       </span>

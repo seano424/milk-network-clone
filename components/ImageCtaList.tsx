@@ -31,6 +31,13 @@ export default function ImageCtaList() {
           transition: { duration: 1.5, ease: 'easeInOut' },
         }}
       >
+        <div className="grid grid-cols-4 text-gray-100">
+          <div className={clsx('p-4')}>Project</div>
+          <div className="p-4">Services</div>
+          <div className="p-4">Year</div>
+          <div className={clsx('p-4')}>Client</div>
+        </div>
+
         {sortItemsByDate.map((item, i) => (
           <Link
             href={item.href}
@@ -39,14 +46,14 @@ export default function ImageCtaList() {
             <div className="grid grid-cols-4">
               <div
                 className={clsx(
-                  'border-l border-y p-4',
+                  'border-y p-4',
                   i === 0 && 'rounded-tl',
                   i === filteredItems.length - 1 && 'rounded-bl'
                 )}
               >
                 {item.title}
               </div>
-              <div className="border-l border-y p-4">
+              <div className="border-y p-4">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -55,7 +62,7 @@ export default function ImageCtaList() {
                   className="object-cover object-center bg-purple-100"
                 />
               </div>
-              <div className="border-l border-y p-4">
+              <div className="border-y p-4">
                 {item.categories.map((cat) => (
                   <p
                     className="flex"
@@ -69,7 +76,7 @@ export default function ImageCtaList() {
               </div>
               <div
                 className={clsx(
-                  'border-x border-y p-4',
+                  'border-y p-4',
                   i === 0 && 'rounded-tr',
                   i === filteredItems.length - 1 && 'rounded-br'
                 )}
