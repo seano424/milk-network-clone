@@ -15,6 +15,7 @@ interface CtaLinkProps {
   }
   className?: string
   decorative?: boolean
+  theme?: 'light' | 'dark'
 }
 
 export default function CtaLink(props: CtaLinkProps) {
@@ -28,11 +29,15 @@ export default function CtaLink(props: CtaLinkProps) {
     time,
     className,
     decorative = false,
+    theme = 'dark',
   } = props
+
   const [currentTime, setCurrentTime] = useState({
     hour: new Date().getHours(),
     minute: new Date().getMinutes(),
   })
+
+  const darkTheme = theme === 'dark'
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -49,11 +54,16 @@ export default function CtaLink(props: CtaLinkProps) {
     <div className={clsx('grid grid-cols-2 py-20', className)}>
       <div
         className={clsx(
-          'flex flex-col gap-2',
+          'flex flex-col gap-2 ',
           fullWidth ? 'col-span-2' : 'col-start-2'
         )}
       >
-        <div className="flex justify-between items-center text-xl xl:text-5xl">
+        <div
+          className={clsx(
+            'flex justify-between items-center text-xl xl:text-5xl',
+            darkTheme ? 'text-black' : 'text-white'
+          )}
+        >
           <p>{title}</p>
           <p>
             {copy && <span>&copy;</span>}
@@ -72,7 +82,10 @@ export default function CtaLink(props: CtaLinkProps) {
         {!decorative && (
           <Link
             href={link.href}
-            className="flex justify-between items-center bg-black w-full rounded-lg py-3 px-4 text-white relative group  overflow-hidden xl:text-xl"
+            className={clsx(
+              'flex justify-between items-center w-full rounded-lg py-3 px-4 relative group  overflow-hidden xl:text-xl',
+              darkTheme ? 'bg-black text-white' : 'bg-white text-black'
+            )}
           >
             <div className="w-full h-full">
               <span
@@ -87,7 +100,9 @@ export default function CtaLink(props: CtaLinkProps) {
                 className={clsx(
                   'absolute flex items-center px-4 inset-0 transform transition-transform duration-300 ease-linear translate-y-12',
                   'group-hover:translate-y-0 z-10',
-                  'group-hover:bg-gray-700/70'
+                  darkTheme
+                    ? 'group-hover:bg-gray-700/70'
+                    : 'group-hover:bg-gray-200/70'
                 )}
               >
                 {link.label}
@@ -111,7 +126,12 @@ export default function CtaLink(props: CtaLinkProps) {
         )}
 
         {decorative && (
-          <div className="flex justify-between items-center bg-black w-full rounded-lg py-3 px-4 text-white relative group  overflow-hidden xl:text-xl">
+          <div
+            className={clsx(
+              'flex justify-between items-center w-full rounded-lg py-3 px-4 relative group  overflow-hidden xl:text-xl',
+              darkTheme ? 'bg-black text-white' : 'bg-white text-black'
+            )}
+          >
             <div className="w-full h-full">
               <span
                 className={clsx(
@@ -125,7 +145,9 @@ export default function CtaLink(props: CtaLinkProps) {
                 className={clsx(
                   'absolute flex items-center px-4 inset-0 transform transition-transform duration-300 ease-linear translate-y-12',
                   'group-hover:translate-y-0 z-10',
-                  'group-hover:bg-gray-700/70'
+                  darkTheme
+                    ? 'group-hover:bg-gray-700/70'
+                    : 'group-hover:bg-gray-200/70'
                 )}
               >
                 {link.label}

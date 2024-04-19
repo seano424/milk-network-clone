@@ -33,15 +33,15 @@ export default function CtaLarge(props: CtaLargeProps) {
     <Link
       id="link"
       href={link.href}
-      className="block h-full w-full"
+      className="block h-full w-full rounded-lg overflow-hidden relative"
     >
-      <div className="relative min-h-[600px] w-full rounded-lg">
+      <div className="relative min-h-[600px] w-full">
         <Image
           fill
           sizes="100vw"
           src={image}
           alt={title}
-          className="object-cover object-center rounded-lg"
+          className="object-cover object-center"
         />
         {/* overlay with bg gradient to top */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/30" />
@@ -53,19 +53,19 @@ export default function CtaLarge(props: CtaLargeProps) {
                 {dot && (
                   <div className="h-7 w-7 rounded-full bg-black flex-shrink-0" />
                 )}
-                <h2 className="text-black dark:text-white flex items-center gap-2 text-2xl xl:text-4xl">
+                <h2 className="text-white flex items-center gap-2 text-2xl xl:text-4xl">
                   {heading}
                 </h2>
               </div>
-              <h2 className="text-black dark:text-white text-2xl xl:text-4xl">
+              <h2 className="text-white text-2xl xl:text-4xl">
                 {headingLine2}
               </h2>
-              <h2 className="text-black dark:text-white text-2xl xl:text-4xl">
+              <h2 className="text-white text-2xl xl:text-4xl">
                 {headingLine3}
               </h2>
             </div>
             {rightHeading && (
-              <h2 className="text-black dark:text-white text-2xl xl:text-4xl max-w-[23rem]">
+              <h2 className="text-white text-2xl xl:text-4xl max-w-[23rem]">
                 {rightHeading}
               </h2>
             )}
@@ -73,6 +73,7 @@ export default function CtaLarge(props: CtaLargeProps) {
 
           <CtaLink
             time
+            theme="light"
             fullWidth={fullWidth}
             decorative
             link={link}
