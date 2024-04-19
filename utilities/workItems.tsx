@@ -1,4 +1,4 @@
-import { Work } from './filters'
+import { Work, News } from './filters'
 
 export const workItems: {
   title: string
@@ -9,7 +9,7 @@ export const workItems: {
   href: string
   spansTwoColumns: boolean
   client: string
-  description: 'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.'
+  description: string
 }[] = [
   {
     title: 'Thmanyah',
@@ -178,6 +178,78 @@ export const workItems: {
     href: '/',
     spansTwoColumns: true,
     client: 'Saudia Milk',
+    description:
+      'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+  },
+]
+
+export const newsItems: {
+  title: string
+  categories: Array<News>
+  images: string[]
+  year: number
+  date: '4 Apr. 2024'
+  client: string
+  description: string
+}[] = [
+  {
+    title: 'Illuminating Eid with the Art of Arabic Lettering',
+    categories: ['Work', 'Updates'],
+    images: [
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+    ],
+    year: 2021,
+    date: '4 Apr. 2024',
+    client: 'SaudiaMilk',
+    description:
+      'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+  },
+  {
+    title:
+      'The Power of Purpose: How Purpose-Driven Brands Are Changing the Game',
+    categories: ['Work', 'Insights & Reflection'],
+    images: [
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+    ],
+    year: 2021,
+    date: '4 Apr. 2024',
+    client: 'SaudiaMilk',
+    description:
+      'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+  },
+  {
+    title: "Milk Network Receives 'Site of the Day' Award from Awwwards",
+    categories: ['Insights & Reflection', 'Updates'],
+    images: [
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+    ],
+    year: 2021,
+    date: '4 Apr. 2024',
+    client: 'SaudiaMilk',
+    description:
+      'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+  },
+  {
+    title: "Attending The World's Largest Tech Event “LEAP 2024”",
+    categories: ['Work', 'Insights & Reflection'],
+    images: [
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+    ],
+    year: 2021,
+    date: '4 Apr. 2024',
+    client: 'SaudiaMilk',
     description:
       'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
   },

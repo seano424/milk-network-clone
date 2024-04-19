@@ -6,8 +6,8 @@ import { gridListAtom } from '@/atoms'
 import { workFilters, newsFilters, communityFilters } from '@/utilities/filters'
 
 import Filter from '@/components/Filter'
-import ImageCtaList from './ImageCtaList'
-import ImageCtaGrid from '@/components/ImageCtaGrid'
+import ImageCtaList from './WorkImageCtaList'
+import ImageCtaGrid from '@/components/WorkImageCtaGrid'
 import GridListButton from '@/components/GridListButton'
 import clsx from 'clsx'
 
@@ -59,8 +59,8 @@ export default function GridList(props: GridListProps) {
         {toggle && <GridListButton />}
       </div>
 
-      {isGrid && <ImageCtaGrid />}
-      {!isGrid && <ImageCtaList />}
+      {isGrid && type === 'work' && <ImageCtaGrid />}
+      {!isGrid && type === 'work' && <ImageCtaList />}
     </div>
   )
 }
