@@ -9,6 +9,7 @@ import { itemsToShowAtom } from '@/atoms'
 import { News } from '@/utilities/filters'
 import { newsItems } from '@/utilities/workItems'
 import { AnimatePresence, motion } from 'framer-motion'
+import { stringToSlug } from '@/utilities/helpers'
 import AnimatedLink from './AnimatedLink'
 
 export default function NewsImageCtaGrid() {
@@ -39,7 +40,7 @@ export default function NewsImageCtaGrid() {
             key={index}
           >
             <Link
-              href={'/'}
+              href={'/discover/' + stringToSlug(item.title)}
               className="flex flex-col gap-4 relative group"
             >
               <div className="w-full h-auto rounded-xl overflow-hidden">

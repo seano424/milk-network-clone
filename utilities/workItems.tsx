@@ -1,6 +1,6 @@
 import { Work, News } from './filters'
 
-export const workItems: {
+export type workItemType = {
   title: string
   categories: Array<Work>
   images: string[]
@@ -10,7 +10,9 @@ export const workItems: {
   spansTwoColumns: boolean
   client: string
   description: string
-}[] = [
+}
+
+export const workItems: workItemType[] = [
   {
     title: 'Thmanyah',
     categories: ['Campaign', 'Communication'],
@@ -183,7 +185,7 @@ export const workItems: {
   },
 ]
 
-export const newsItems: {
+export type newsItemType = {
   title: string
   categories: Array<News>
   images: string[]
@@ -191,7 +193,9 @@ export const newsItems: {
   date: '4 Apr. 2024'
   client: string
   description: string
-}[] = [
+}
+
+export const newsItems: newsItemType[] = [
   {
     title: 'Illuminating Eid with the Art of Arabic Lettering',
     categories: ['Work', 'Updates'],
@@ -228,9 +232,9 @@ export const newsItems: {
     categories: ['Insights & Reflection', 'Updates'],
     images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_Thumbnail_5797bea1bd.webp',
-      'https://strapi-cms-3mz0.onrender.com/uploads/small_Thumbnail_5797bea1bd.webp',
-      'https://strapi-cms-3mz0.onrender.com/uploads/small_Thumbnail_5797bea1bd.webp',
-      'https://strapi-cms-3mz0.onrender.com/uploads/small_Thumbnail_5797bea1bd.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
     ],
     year: 2021,
     date: '4 Apr. 2024',
