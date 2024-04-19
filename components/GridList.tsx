@@ -10,6 +10,7 @@ import ImageCtaList from './WorkImageCtaList'
 import ImageCtaGrid from '@/components/WorkImageCtaGrid'
 import GridListButton from '@/components/GridListButton'
 import clsx from 'clsx'
+import NewsImageCtaGrid from './NewsImageCtaGrid'
 
 interface GridListProps {
   type: 'work' | 'community' | 'news'
@@ -61,6 +62,7 @@ export default function GridList(props: GridListProps) {
 
       {isGrid && type === 'work' && <ImageCtaGrid />}
       {!isGrid && type === 'work' && <ImageCtaList />}
+      {type === 'news' && <NewsImageCtaGrid />}
     </div>
   )
 }

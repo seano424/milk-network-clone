@@ -23,7 +23,7 @@ export default function DiscoverPage() {
         <CtaCard work={latestWork} />
       </div>
 
-      <div className="min-h-screen relative mt-[100vh] bg-blue-500 p-4 py-20">
+      <div className="min-h-screen relative mt-[100vh] bg-white p-4 py-20">
         <GridList
           isVertical
           allText="All News"
