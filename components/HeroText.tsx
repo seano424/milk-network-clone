@@ -1,12 +1,15 @@
+import clsx from 'clsx'
+
 interface HeroTextProps {
   header: string
   subheader?: string
+  className?: string
 }
 
 export default function HeroText(props: HeroTextProps) {
-  const { header, subheader } = props
+  const { header, subheader, className } = props
   return (
-    <div className="p-4 grid gap-4">
+    <div className={clsx('p-4 grid gap-4', className)}>
       <h1 className="text-6xl xl:text-9xl tracking-tighter">{header}</h1>
       {subheader && (
         <p className="flex items-start relative">

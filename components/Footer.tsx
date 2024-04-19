@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <>
       {(!loading || pathname !== '/') && (
-        <footer className="py-5">
+        <footer className="py-5 bg-white relative z-20">
           {/* Top Row */}
           <div className="grid grid-cols-2 gap-3 border-b p-4">
             <Link
