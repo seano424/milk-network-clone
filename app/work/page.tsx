@@ -2,6 +2,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import GridList from '@/components/GridList'
 import CtaLarge from '@/components/CtaLarge'
+import HeroText from '@/components/HeroText'
 
 export default function WorkPage() {
   return (
@@ -19,10 +20,10 @@ export default function WorkPage() {
           opacity: 0,
           transition: { duration: 5, ease: 'easeInOut' },
         }}
-        className="mt-20 p-4 flex flex-col gap-8"
+        className="mt-20 flex flex-col gap-8"
       >
-        <h1 className="text-6xl xl:text-9xl mb-20">Work</h1>
-        <div className='grid gap-40'>
+        <HeroText header="Work" />
+        <div className="grid gap-40 p-4">
           <GridList />
           <CtaLarge
             image="https://strapi-cms-3mz0.onrender.com/uploads/Jeddah_Office_1_70052261e5.webp"

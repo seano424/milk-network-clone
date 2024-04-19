@@ -8,7 +8,7 @@ export const companyLinks = [
   { title: 'Work', href: '/work' },
   { title: 'Expertise', href: '/' },
   { title: 'Community', href: '/' },
-  { title: 'Discover', href: '/' },
+  { title: 'Discover', href: '/discover' },
   { title: 'Contact', href: '/' },
 ]
 
