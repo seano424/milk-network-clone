@@ -26,9 +26,19 @@ export default function MoreButton(props: MoreButtonProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={handleShowMoreItems}
-          className="text-primary font-bold text-lg group"
+          className={clsx(
+            'group rounded-full h-28 w-28 flex items-center justify-center mx-auto mt-10 relative'
+          )}
         >
-          <Spin />
+          <div
+            className={clsx(
+              'absolute rounded-full inset-0',
+              'bg-gray-200/95 dark:bg-gray-950',
+              'transition-all duration-700 ease-in-out',
+              'group-hover:scale-75'
+            )}
+          />
+          <Spin size="medium" />
         </motion.button>
       )}
     </AnimatePresence>
