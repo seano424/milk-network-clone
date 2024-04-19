@@ -193,6 +193,7 @@ export type newsItemType = {
   date: '4 Apr. 2024'
   client: string
   description: string
+  writer: string
 }
 
 export const newsItems: newsItemType[] = [
@@ -210,6 +211,7 @@ export const newsItems: newsItemType[] = [
     client: 'SaudiaMilk',
     description:
       'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+    writer: 'Nouf Yamani',
   },
   {
     title:
@@ -226,6 +228,7 @@ export const newsItems: newsItemType[] = [
     client: 'SaudiaMilk',
     description:
       'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+    writer: 'Nouf Yamani',
   },
   {
     title: "Milk Network Receives 'Site of the Day' Award from Awwwards",
@@ -241,6 +244,7 @@ export const newsItems: newsItemType[] = [
     client: 'SaudiaMilk',
     description:
       'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+    writer: 'Nouf Yamani',
   },
   {
     title: "Attending The World's Largest Tech Event “LEAP 2024”",
@@ -256,5 +260,6 @@ export const newsItems: newsItemType[] = [
     client: 'SaudiaMilk',
     description:
       'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+    writer: 'Nouf Yamani',
   },
 ]

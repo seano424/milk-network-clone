@@ -29,7 +29,7 @@ export default function ImageRotateHeader({ newsItem }: Props) {
       <div className="relative h-12 w-20 float-left mr-4 mt-2">
         {newsItem.images.map((image, index) => (
           <Image
-            key={image}
+            key={index}
             src={image}
             alt={newsItem.title}
             fill
