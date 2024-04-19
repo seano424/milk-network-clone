@@ -3,87 +3,119 @@ import { Work } from './filters'
 export const workItems: {
   title: string
   categories: Array<Work>
-  image: string
+  images: string[]
   year: number
   href: string
   spansTwoColumns: boolean
   client: string
 }[] = [
   {
-    title: 'Get started',
+    title: 'Thmanyah',
     categories: ['Campaign', 'Communication'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_Saudia_Milk_82c9240877.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Saudia_Milk_82c9240877.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Saudia_Milk_82c9240877.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Saudia_Milk_82c9240877.webp',
+    ],
     year: 2021,
     href: '/',
     spansTwoColumns: false,
     client: 'SaudiaMilk',
   },
   {
-    title: 'Get started',
+    title: 'Cultural Talents Tournaments',
     categories: ['Visual Identity', 'Way-finding'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_11_58924254bc.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_11_58924254bc.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_11_58924254bc.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_11_58924254bc.webp',
+    ],
     year: 2024,
     href: '/',
     spansTwoColumns: false,
     client: 'Nana',
   },
   {
-    title: 'Get started',
+    title: 'Ministry of Culture',
     categories: ['Visual Identity', 'Packaging'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_Cover_2_copy_79f43981c7.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Cover_2_copy_79f43981c7.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Cover_2_copy_79f43981c7.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Cover_2_copy_79f43981c7.webp',
+    ],
     year: 2024,
     href: '/',
     spansTwoColumns: false,
     client: 'Tawuniya',
   },
   {
-    title: 'Get started',
+    title: 'Nana',
     categories: ['Social Media', 'Campaign'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_10_b0f4fb753a.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_10_b0f4fb753a.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_10_b0f4fb753a.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_10_b0f4fb753a.webp',
+    ],
     year: 2024,
     href: '/',
     spansTwoColumns: true,
     client: 'Nana',
   },
   {
-    title: 'Get started',
+    title: 'Saudi Design Week',
     categories: ['Visual Identity'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_Core_Fitness_d26e907971.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Core_Fitness_d26e907971.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Core_Fitness_d26e907971.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_Core_Fitness_d26e907971.webp',
+    ],
     year: 2023,
     href: '/',
     spansTwoColumns: true,
     client: 'Nana',
   },
   {
-    title: 'Get started',
+    title: 'Quantum',
     categories: ['Visual Identity'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9186ab4156.jpg',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9186ab4156.jpg',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9186ab4156.jpg',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9186ab4156.jpg',
+    ],
     year: 2023,
     href: '/',
     spansTwoColumns: false,
     client: 'Saudia Milk',
   },
   {
-    title: 'Get started',
+    title: 'Lamb',
     categories: ['Visual Identity'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9da39e6ecb.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9da39e6ecb.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9da39e6ecb.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_copy_9da39e6ecb.webp',
+    ],
     year: 2023,
     href: '/',
     spansTwoColumns: false,
     client: 'Nana',
   },
   {
-    title: 'Get started',
+    title: 'Boost',
     categories: ['Visual Identity'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_01_Cover_aaaee6715e.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_01_Cover_aaaee6715e.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_01_Cover_aaaee6715e.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_01_Cover_aaaee6715e.webp',
+    ],
     year: 2022,
     href: '/',
     spansTwoColumns: false,
@@ -92,8 +124,12 @@ export const workItems: {
   {
     title: 'Get started',
     categories: ['Visual Identity', 'Re-branding'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_00_Cover_da55171b65.webp',
+    ],
     year: 2022,
     href: '/',
     spansTwoColumns: false,
@@ -102,8 +138,12 @@ export const workItems: {
   {
     title: 'Get started',
     categories: ['Visual Identity', 'Sonic'],
-    image:
+    images: [
       'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+      'https://strapi-cms-3mz0.onrender.com/uploads/small_009_copy_292b10a1de.webp',
+    ],
     year: 2021,
     href: '/',
     spansTwoColumns: true,

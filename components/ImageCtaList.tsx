@@ -6,6 +6,7 @@ import { useAtomValue } from 'jotai'
 import { Work } from '@/utilities/filters'
 import { workItems } from '@/utilities/workItems'
 import { AnimatePresence, motion } from 'framer-motion'
+import AnimatedLink from './AnimatedLink'
 
 export default function ImageCtaList() {
   const filterState = useAtomValue(filterAtom)
@@ -42,6 +43,7 @@ export default function ImageCtaList() {
           <Link
             href={item.href}
             key={item.title}
+            className='group'
           >
             <div
               className={clsx(
@@ -56,7 +58,7 @@ export default function ImageCtaList() {
                   i === filteredItems.length - 1 && 'rounded-bl'
                 )}
               >
-                {item.title}
+                <AnimatedLink title={item.title} />
               </div>
               <div className="p-4">
                 {item.categories.map((cat) => (

@@ -61,7 +61,9 @@ export default function ImageCtaGrid() {
                     <Image
                       fill
                       sizes="50vw"
-                      src={item.image ?? 'https://source.unsplash.com/random'}
+                      src={
+                        item.images[0] ?? 'https://source.unsplash.com/random'
+                      }
                       alt={item.title}
                       className="w-full h-48 object-cover object-center mb-5 rounded-lg group-hover:scale-125 transition-transform duration-500 ease-in-out"
                     />
