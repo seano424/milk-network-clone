@@ -1,5 +1,3 @@
-'use client'
-
 import CtaCard from '@/components/CtaCard'
 import GridList from '@/components/GridList'
 import HeroText from '@/components/HeroText'
