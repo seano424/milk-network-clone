@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 interface FilterProps {
   filters: string[]
-  type: 'work' | 'community'
+  type: 'work' | 'community' | 'news'
 }
 
 export const FilterButton = ({

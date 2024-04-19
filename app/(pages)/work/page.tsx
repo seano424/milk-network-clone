@@ -7,7 +7,7 @@ export default function WorkPage() {
     <div className="mt-20 flex flex-col gap-8">
       <HeroText header="Work" />
       <div className="grid gap-40 p-4">
-        <GridList />
+        <GridList type="work" />
         <CtaLarge
           image="https://strapi-cms-3mz0.onrender.com/uploads/Jeddah_Office_1_70052261e5.webp"
           fullWidth={false}

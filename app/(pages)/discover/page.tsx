@@ -1,14 +1,16 @@
-import { workItems } from '@/utilities/workItems'
+'use client'
 
 import CtaCard from '@/components/CtaCard'
 import HeroText from '@/components/HeroText'
+
+import { workItems } from '@/utilities/workItems'
 
 export default function DiscoverPage() {
   const latestWork = workItems.sort((a, b) => b.year - a.year)[0]
 
   return (
-    <div className="mt-20 flex flex-col gap-8">
-      <div className="fixed top-20 inset-0">
+    <div className="flex flex-col gap-8 relative">
+      <div className="fixed inset-0 top-20">
         <HeroText
           className="mb-10"
           header="The Latest"
