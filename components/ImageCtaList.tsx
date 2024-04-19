@@ -43,24 +43,24 @@ export default function ImageCtaList() {
           <Link
             href={item.href}
             key={item.title}
-            className='group'
+            className="group"
           >
             <div
               className={clsx(
-                'grid grid-cols-4 border-y',
+                'grid grid-cols-4 border-y overflow-hidden',
                 sortItemsByDate.length - 1 === i && 'border-none'
               )}
             >
               <div
                 className={clsx(
-                  'p-4',
+                  'pt-4 px-4',
                   i === 0 && 'rounded-tl',
                   i === filteredItems.length - 1 && 'rounded-bl'
                 )}
               >
                 <AnimatedLink title={item.title} />
               </div>
-              <div className="p-4">
+              <div className="pt-4 px-4">
                 {item.categories.map((cat) => (
                   <p
                     className="flex"
@@ -71,16 +71,21 @@ export default function ImageCtaList() {
                       item.categories.length - 1 && ', '}
                   </p>
                 ))}
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  height={200}
-                  width={200}
-                  className="object-cover object-center bg-purple-100 mt-4"
-                />
               </div>
-              <div className="p-4">({item.year})</div>
-              <div className={clsx('p-4')}>({item.client})</div>
+              <div className="pt-4 px-4">({item.year})</div>
+              <div className={clsx('pt-4 px-4')}>({item.client})</div>
+              <div className="flex col-start-2 col-span-4 gap-2 mb-2">
+                {item.images.map((img, i) => (
+                  <Image
+                    key={i}
+                    src={img}
+                    alt={item.title}
+                    height={200}
+                    width={200}
+                    className="object-cover object-center bg-purple-100 my-4 rounded-lg"
+                  />
+                ))}
+              </div>
             </div>
           </Link>
         ))}
