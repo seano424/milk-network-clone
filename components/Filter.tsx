@@ -5,55 +5,23 @@ import { useAtom } from 'jotai'
 import { filterAtom } from '@/atoms'
 import { motion, AnimatePresence } from 'framer-motion'
 
+import FilterButton from './FilterButton'
 interface FilterProps {
   filters: string[]
   type: 'work' | 'community' | 'news'
-}
-
-export const FilterButton = ({
-  type,
-  f,
-}: {
-  type: 'work' | 'community'
-  f: string
-}) => {
-  const [filterState, setFilterState] = useAtom(filterAtom)
-
-  const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-  }
-
-  return (
-    <motion.button
-      variants={item}
-      onClick={() => {
-        setFilterState({ type, filter: f ?? '', isOpen: false })
-      }}
-      className={clsx(
-        'text-left w-max',
-        filterState.filter === f && 'border-b-2 border-black dark:border-white'
-      )}
-    >
-      <span className="relative group">
-        {f.length ? f : 'All Works'}
-        <span
-          className={clsx(
-            'absolute left-0  filter backdrop-contrast-200 group-hover:w-full w-0 transition-all duration-500 ease-in-out z-10',
-            f.length
-              ? filterState.filter === f
-                ? 'bg-gray-100 h-[5px] -bottom-[5px]'
-                : 'bg-gray-950 dark:bg-white h-[2px] -bottom-[4px]'
-              : 'bg-gray-100 dark:bg-gray-950 h-[5px] -bottom-[5px]'
-          )}
-        ></span>
-      </span>
-    </motion.button>
-  )
+  className?: string
+  isVertical?: boolean
+  allText?: string
 }
 
 export default function Filter(props: FilterProps) {
-  const { filters, type } = props
+  const {
+    filters,
+    type,
+    className,
+    isVertical = false,
+    allText = 'All',
+  } = props
   const [filterState, setFilterState] = useAtom(filterAtom)
 
   const container = {
@@ -71,15 +39,18 @@ export default function Filter(props: FilterProps) {
   }
 
   return (
-    <div className="relative w-full xl:w-1/2">
+    <div className={clsx('relative w-full xl:w-1/2', className)}>
       <button
         onClick={() =>
           setFilterState({
-            ...filterState,
+            filter: filterState.filter,
+            type,
             isOpen: !filterState.isOpen,
           })
         }
-        className="flex justify-between items-center w-full group text-xl bg-gray-100 dark:bg-gray-950 rounded-lg p-3 z-20 relative"
+        className={
+          'flex justify-between items-center w-full group text-xl bg-gray-100 dark:bg-gray-950 rounded-lg p-3 z-20 relative'
+        }
       >
         {/* Three lines on top of each other */}
         <div className="flex items-center">
@@ -120,7 +91,7 @@ export default function Filter(props: FilterProps) {
               ></span>
             </span>
           </span>
-          {filterState.filter || 'All Works'}
+          {filterState.filter || allText}
         </div>
 
         {/* Plus/Minus SVG */}
@@ -156,10 +127,16 @@ export default function Filter(props: FilterProps) {
             animate="show"
             className="absolute top-0 left-0 w-full dark:bg-gray-950 bg-gray-100 rounded-lg z-10 text-xl"
           >
-            <div className="grid grid-cols-3 gap-3 pt-20 p-3">
+            <div
+              className={clsx(
+                'pt-20 p-3 grid gap-3',
+                isVertical ? '' : 'grid-cols-3'
+              )}
+            >
               <FilterButton
                 f=""
                 type={type}
+                allText={allText}
               />
               {filters.map((f) => (
                 <FilterButton

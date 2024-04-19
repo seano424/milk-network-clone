@@ -1,6 +1,7 @@
 'use client'
 
 import CtaCard from '@/components/CtaCard'
+import GridList from '@/components/GridList'
 import HeroText from '@/components/HeroText'
 
 import { workItems } from '@/utilities/workItems'
@@ -22,7 +23,14 @@ export default function DiscoverPage() {
         <CtaCard work={latestWork} />
       </div>
 
-      <div className="min-h-screen relative mt-[100vh] bg-blue-500"></div>
+      <div className="min-h-screen relative mt-[100vh] bg-blue-500 p-4 py-20">
+        <GridList
+          isVertical
+          allText="All News"
+          toggle={false}
+          type="news"
+        />
+      </div>
     </div>
   )
 }

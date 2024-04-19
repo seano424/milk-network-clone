@@ -9,13 +9,24 @@ import Filter from '@/components/Filter'
 import ImageCtaList from './ImageCtaList'
 import ImageCtaGrid from '@/components/ImageCtaGrid'
 import GridListButton from '@/components/GridListButton'
+import clsx from 'clsx'
 
 interface GridListProps {
   type: 'work' | 'community' | 'news'
+  toggle?: boolean
+  className?: string
+  isVertical?: boolean
+  allText?: string
 }
 
 export default function GridList(props: GridListProps) {
-  const { type } = props
+  const {
+    type,
+    toggle = true,
+    className,
+    isVertical = false,
+    allText = 'All',
+  } = props
   const gridList = useAtomValue(gridListAtom)
   const isGrid = gridList === 'grid'
 
@@ -36,13 +47,16 @@ export default function GridList(props: GridListProps) {
   }
 
   return (
-    <div className="flex flex-col relative gap-8">
+    <div className={clsx('flex flex-col relative gap-8')}>
       <div className="flex gap-5 justify-between items-end">
         <Filter
           type={type}
+          className={className}
           filters={filterType}
+          isVertical={isVertical}
+          allText={allText}
         />
-        <GridListButton />
+        {toggle && <GridListButton />}
       </div>
 
       {isGrid && <ImageCtaGrid />}
