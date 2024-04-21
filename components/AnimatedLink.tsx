@@ -26,7 +26,11 @@ export default function AnimatedLink(props: Props) {
     <>
       {href && (
         <Link
-          className={clsx(className, 'relative group')}
+          className={clsx(
+            className,
+            'relative group',
+            invert && 'border-b-2 border-black '
+          )}
           href={href}
         >
           {title}

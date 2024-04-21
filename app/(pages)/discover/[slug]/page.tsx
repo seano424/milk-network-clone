@@ -1,11 +1,15 @@
+import Link from 'next/link'
+import Image from 'next/image'
+
 import { socials } from '@/utilities/links'
 import { stringToSlug } from '@/utilities/helpers'
 import { newsItems } from '@/utilities/content'
-import Link from 'next/link'
+
 import ImageRotateHeader from '@/components/ImageRotateHeader'
-import Image from 'next/image'
 import NewsImageCtaGrid from '@/components/NewsImageCtaGrid'
 import DotAndText from '@/components/DotAndText'
+import AnimatedLink from '@/components/AnimatedLink'
+import CtaDivider from '@/components/CtaDivider'
 
 export default function Page({ params }: { params: { slug: string } }) {
   const newsItem = newsItems.find(
@@ -120,15 +124,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      {/* You might also like... */}
-      <div className="grid grid-cols-12 my-20">
-        <div className="col-span-6">
-          <DotAndText>You might also like</DotAndText>
-        </div>
-        <div className="col-span-4"></div>
-        <div className="col-span-2"></div>
-      </div>
-
+      <CtaDivider />
       <NewsImageCtaGrid />
     </div>
   )
