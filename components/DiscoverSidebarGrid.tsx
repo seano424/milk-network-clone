@@ -116,26 +116,28 @@ export default function DiscoverSidebarGrid(props: DiscoverNewsItemProps) {
         ))}
 
         {/* Newsletter */}
+        <a
+          href="#"
+          className="font-bold text-4xl tracking-tight border-b-4 border-black my-4 w-max hover:border-opacity-0 transition-all duration-200 ease-in-out"
+        >
+          Download Link
+        </a>
 
-        <div>
-          <div className="bg-yellow-300 min-h-80 w-full rounded-xl relative flex flex-col h-max">
-            <div className="p-4 min-h-40">
-              <DotAndText>Newsletter</DotAndText>
-            </div>
-            <div className="min-h-1/2 border-t border-gray-400 p-4 flex flex-col gap-4">
-              <p>
-                Don't miss out on our latest updates and exclusive offers,
-                subscribe to our newsletter now!
-              </p>
+        <h4 className="text-3xl my-4 tracking-tight">
+          Subscribe to our newsletter
+        </h4>
 
-              {/* <input
-                className="rounded-lg px-4 py-3 bg-white placeholder:text-gray-300 focus:outline-none focus:ring-0"
-                placeholder="Enter your email"
-                type="email"
-              /> */}
+        <div className="bg-yellow-300 min-h-80 w-full rounded-xl relative flex flex-col h-max">
+          <div className="p-4 min-h-40">
+            <DotAndText>Newsletter</DotAndText>
+          </div>
+          <div className="min-h-1/2 border-t border-gray-400 p-4 flex flex-col gap-4">
+            <p>
+              Don't miss out on our latest updates and exclusive offers,
+              subscribe to our newsletter now!
+            </p>
 
-              <InputWithSvg />
-            </div>
+            <InputWithSvg />
           </div>
         </div>
       </div>
