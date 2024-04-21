@@ -7,7 +7,7 @@ import { filterAtom } from '@/atoms'
 import { useAtomValue } from 'jotai'
 import { itemsToShowAtom } from '@/atoms'
 import { Work } from '@/utilities/filters'
-import { workItems } from '@/utilities/workItems'
+import { workItems } from '@/utilities/content'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import MoreButton from './MoreButton'

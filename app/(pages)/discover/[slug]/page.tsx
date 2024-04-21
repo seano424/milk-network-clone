@@ -1,6 +1,6 @@
 import { socials } from '@/utilities/links'
 import { stringToSlug } from '@/utilities/helpers'
-import { newsItems } from '@/utilities/workItems'
+import { newsItems } from '@/utilities/content'
 import Link from 'next/link'
 import ImageRotateHeader from '@/components/ImageRotateHeader'
 import Image from 'next/image'

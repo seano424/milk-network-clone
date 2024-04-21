@@ -2,7 +2,7 @@ import CtaCard from '@/components/CtaCard'
 import GridList from '@/components/GridList'
 import HeroText from '@/components/HeroText'
 
-import { workItems } from '@/utilities/workItems'
+import { workItems } from '@/utilities/content'
 
 export default function DiscoverPage() {
   const latestWork = workItems.sort((a, b) => b.year - a.year)[0]

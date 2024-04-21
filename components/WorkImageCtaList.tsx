@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { filterAtom } from '@/atoms'
 import { useAtomValue } from 'jotai'
 import { Work } from '@/utilities/filters'
-import { workItems } from '@/utilities/workItems'
+import { workItems } from '@/utilities/content'
 import { AnimatePresence, motion } from 'framer-motion'
 import AnimatedLink from './AnimatedLink'
 
