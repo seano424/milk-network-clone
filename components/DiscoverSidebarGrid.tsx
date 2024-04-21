@@ -1,6 +1,9 @@
+import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
 import { socials } from '@/utilities/links'
+import DotAndText from './DotAndText'
+import InputWithSvg from './InputWithSvg'
 
 interface DiscoverNewsItemProps {
   newsItem: {
@@ -71,7 +74,7 @@ export default function DiscoverSidebarGrid(props: DiscoverNewsItemProps) {
       </div>
 
       {/* Main Content */}
-      <div className="col-span-8 flex flex-col p-4">
+      <div className="col-span-8 flex flex-col gap-4 p-4">
         <div className="bg-gray-200 h-80 w-full rounded-xl relative">
           <Image
             fill
@@ -107,10 +110,34 @@ export default function DiscoverSidebarGrid(props: DiscoverNewsItemProps) {
               src={image}
               alt="feature image"
               sizes="(min-width: 640px) 640px, 100vw"
-              className="rounded-xl object-cover scale-90"
+              className="rounded-xl object-cover"
             />
           </div>
         ))}
+
+        {/* Newsletter */}
+
+        <div>
+          <div className="bg-yellow-300 min-h-80 w-full rounded-xl relative flex flex-col h-max">
+            <div className="p-4 min-h-40">
+              <DotAndText>Newsletter</DotAndText>
+            </div>
+            <div className="min-h-1/2 border-t border-gray-400 p-4 flex flex-col gap-4">
+              <p>
+                Don't miss out on our latest updates and exclusive offers,
+                subscribe to our newsletter now!
+              </p>
+
+              {/* <input
+                className="rounded-lg px-4 py-3 bg-white placeholder:text-gray-300 focus:outline-none focus:ring-0"
+                placeholder="Enter your email"
+                type="email"
+              /> */}
+
+              <InputWithSvg />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
