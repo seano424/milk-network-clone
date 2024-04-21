@@ -3,6 +3,7 @@ import { stringToSlug } from '@/utilities/helpers'
 import { newsItems } from '@/utilities/workItems'
 import Link from 'next/link'
 import ImageRotateHeader from '@/components/ImageRotateHeader'
+import Image from 'next/image'
 
 export default function Page({ params }: { params: { slug: string } }) {
   const newsItem = newsItems.find(
@@ -17,16 +18,17 @@ export default function Page({ params }: { params: { slug: string } }) {
     <div className="mt-16 p-4">
       <ImageRotateHeader newsItem={newsItem} />
 
-      <div className="grid grid-cols-12 min-h-full border-8">
-        <div className="col-span-4 sticky h-[45rem] top-0 flex flex-col gap-4 border-8 border-red-50">
-          <div className="rounded-full p-2 bg-black text-xs tracking-tighter text-white h-10 w-10 flex items-center justify-center flex-shrink-0 mt-4">
+      <div className="grid grid-cols-12 min-h-full mt-10">
+        {/* Left Sidebar */}
+        <div className="col-span-4 sticky h-[25rem] top-20 flex flex-col">
+          <div className="rounded-full p-2 bg-black text-xs tracking-tighter text-white h-10 w-10 flex items-center justify-center flex-shrink-0 my-4">
             milk
           </div>
-          <div className="grid grid-cols-6 gap-4 border-t py-1">
+          <div className="grid grid-cols-6 border-t py-2">
             <p className="col-span-2 text-gray-400">Date</p>
             <p className="col-span-4">{newsItem.date}</p>
           </div>
-          <div className="grid grid-cols-6 gap-4 border-t py-1">
+          <div className="grid grid-cols-6 border-t py-2">
             <p className="col-span-2 text-gray-400">Category</p>
             <p className="col-span-4">
               {newsItem.categories.map((cat) => (
@@ -41,12 +43,12 @@ export default function Page({ params }: { params: { slug: string } }) {
               ))}
             </p>
           </div>
-          <div className="grid grid-cols-6 gap-4 border-y py-1">
+          <div className="grid grid-cols-6 border-y py-2">
             <p className="col-span-2 text-gray-400">Writer</p>
             <p className="col-span-4">{newsItem.writer}</p>
           </div>
 
-          <p className="col-span-2 text-gray-400 mt-20 border-b pb-2">Share</p>
+          <p className="col-span-2 text-gray-400 mt-20 border-b pb-2 mb-2">Share</p>
 
           <div className="flex gap-3">
             {socials.slice(0, 4).map((social) => (
@@ -69,11 +71,45 @@ export default function Page({ params }: { params: { slug: string } }) {
             ))}
           </div>
         </div>
-        <div className="col-span-8 border h-[200vh] bg-purple-50">
-          <div className="bg-blue-600 h-80 w-full rounded-3xl my-10"></div>
-          <div className="bg-blue-700 h-80 w-full rounded-3xl my-10"></div>
-          <div className="bg-blue-800 h-80 w-full rounded-3xl my-10"></div>
-          <div className="bg-blue-900 h-80 w-full rounded-3xl mt-10"></div>
+
+        {/* Main Content */}
+        <div className="col-span-8 flex flex-col p-4">
+          <div className="bg-gray-200 h-80 w-full rounded-xl relative">
+            <Image
+              fill
+              src={newsItem.images[0]}
+              alt="feature image"
+              sizes="(min-width: 640px) 640px, 100vw"
+              className="rounded-xl object-cover scale-90"
+            />
+          </div>
+
+          <p className="tracking-wide">{newsItem.description}</p>
+
+          <p className="font-bold tracking-wide">
+            We are proud to make all our eid artworks open-source for everyone
+            to use. Additionally, we have also included heartfelt messages that
+            can be seamlessly integrated into your greetings, allowing you to
+            add a personal and heartfelt touch to your celebrations. As we come
+            together to celebrate Eid, let us embrace the spirit of unity and
+            generosity, spreading love and positivity throughout our
+            communities. Wishing you all a blessed and joyous Eid al-Fitr!
+          </p>
+
+          {newsItem.images.map((image) => (
+            <div
+              key={image}
+              className="bg-gray-200 h-80 w-full rounded-xl relative"
+            >
+              <Image
+                fill
+                src={image}
+                alt="feature image"
+                sizes="(min-width: 640px) 640px, 100vw"
+                className="rounded-xl object-cover scale-90"
+              />
+            </div>
+          ))}
         </div>
       </div>
 

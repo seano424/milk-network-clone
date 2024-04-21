@@ -210,7 +210,7 @@ export const newsItems: newsItemType[] = [
     date: '4 Apr. 2024',
     client: 'SaudiaMilk',
     description:
-      'A glimpse of the branding scene affected by the contribution of the transformational national Vision of KSA.',
+      "In the spirit of Eid al-Fitr, a momentous occasion that brings joy, introspection, and unity, communities unite to commemorate the end of Ramadan. We are proud with our community and heritage, we firmly believe in the ability of creativity to forge bonds and share love. That is precisely why our talented team has undertaken a heartwarming endeavor this year - a celebration of Eid al-Fitr through the art of calligraphy and lettering. As we prepare to mark this special occasion, we are excited to announce the launch of our Eid celebration posters. Carefully curated with intricate Arabic lettering and calligraphy, these designs capture the essence of Eid, embracing our cherished cultural heritage and customs. However, our endeavor extends beyond the creation of visually captivating artwork – it's about supporting our community and spreading joy far and wide.",
     writer: 'Nouf Yamani',
   },
   {
