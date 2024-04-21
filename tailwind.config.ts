@@ -11,6 +11,8 @@ const config: Config = {
       animation: {
         'pulse-fade': 'pulse-fade 1s infinite',
         blink: 'blink 1s linear infinite',
+        'button-icon-movement':
+          'button-icon-movement .6s cubic-bezier(.3,.86,.36,.95) forwards',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -37,6 +39,20 @@ const config: Config = {
           },
           '100%': {
             opacity: '1',
+          },
+        },
+        'button-icon-movement': {
+          '0%, 0.1%': {
+            transform: 'none',
+          },
+          '49.9%': {
+            transform: 'translateX(125%)',
+          },
+          '50%, 50.1%': {
+            transform: 'translateX(-125%)',
+          },
+          '100%': {
+            transform: 'none',
           },
         },
       },

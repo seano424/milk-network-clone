@@ -1,19 +1,17 @@
 'use client'
 
-import clsx from 'clsx'
 import Link from 'next/link'
-import { useState } from 'react'
 import { useAtomValue } from 'jotai'
 import { loadingAtom } from '@/atoms'
 import { usePathname } from 'next/navigation'
+import { offices, companyLinks, socials } from '@/utilities/links'
 
 import AnimatedLink from './AnimatedLink'
-import { offices, companyLinks, socials } from '@/utilities/links'
+import InputWithSvg from './InputWithSvg'
 
 export default function Footer() {
   const loading = useAtomValue(loadingAtom)
   const pathname = usePathname()
-  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <>
@@ -47,58 +45,7 @@ export default function Footer() {
               <div>
                 <h5 className="text-gray-400 mb-5">Newsletter</h5>
 
-                <div className="relative w-max">
-                  <input
-                    type="text"
-                    className="bg-gray-100 rounded-lg p-3 text-gray-500 min-w-64 outline-none transition-all duration-300 ease-in-out focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50"
-                    placeholder="Enter your email"
-                  />
-
-                  <span
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                    className="absolute top-0 bottom-0 right-2 flex items-center justify-center w-8 overflow-hidden z-10 opacity-30 hover:opacity-100"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className={clsx(
-                        'h-6 w-6',
-                        'transition-all duration-700 transform ease-in-out',
-                        isHovered ? 'translate-x-8' : 'translate-x-0'
-                      )}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                      />
-                    </svg>
-                  </span>
-
-                  <span className="absolute top-0 bottom-0 right-2 flex items-center justify-center w-8 overflow-hidden">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className={clsx(
-                        'h-6 w-6 transform transition-all duration-700 ease-in-out',
-                        !isHovered ? '-translate-x-8' : 'translate-x-0'
-                      )}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                      />
-                    </svg>
-                  </span>
-                </div>
+                <InputWithSvg className="w-max" />
 
                 <p className="mt-4">
                   By subscribing you agree with our{' '}
