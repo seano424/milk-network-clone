@@ -4,6 +4,8 @@ import { newsItems } from '@/utilities/content'
 import Link from 'next/link'
 import ImageRotateHeader from '@/components/ImageRotateHeader'
 import Image from 'next/image'
+import NewsImageCtaGrid from '@/components/NewsImageCtaGrid'
+import DotAndText from '@/components/DotAndText'
 
 export default function Page({ params }: { params: { slug: string } }) {
   const newsItem = newsItems.find(
@@ -48,7 +50,9 @@ export default function Page({ params }: { params: { slug: string } }) {
             <p className="col-span-4">{newsItem.writer}</p>
           </div>
 
-          <p className="col-span-2 text-gray-400 mt-20 border-b pb-2 mb-2">Share</p>
+          <p className="col-span-2 text-gray-400 mt-20 border-b pb-2 mb-2">
+            Share
+          </p>
 
           <div className="flex gap-3">
             {socials.slice(0, 4).map((social) => (
@@ -84,8 +88,10 @@ export default function Page({ params }: { params: { slug: string } }) {
             />
           </div>
 
+          {/* Description */}
           <p className="tracking-wide">{newsItem.description}</p>
 
+          {/* Our Message */}
           <p className="font-bold tracking-wide">
             We are proud to make all our eid artworks open-source for everyone
             to use. Additionally, we have also included heartfelt messages that
@@ -96,6 +102,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             communities. Wishing you all a blessed and joyous Eid al-Fitr!
           </p>
 
+          {/* Images */}
           {newsItem.images.map((image) => (
             <div
               key={image}
@@ -113,7 +120,16 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <div className="min-h-screen bg-purple-200"></div>
+      {/* You might also like... */}
+      <div className="grid grid-cols-12 my-20">
+        <div className="col-span-6">
+          <DotAndText>You might also like</DotAndText>
+        </div>
+        <div className="col-span-4"></div>
+        <div className="col-span-2"></div>
+      </div>
+
+      <NewsImageCtaGrid />
     </div>
   )
 }
